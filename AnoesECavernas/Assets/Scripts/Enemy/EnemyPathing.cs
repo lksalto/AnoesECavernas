@@ -8,15 +8,23 @@ public class EnemyPathing : MonoBehaviour
 {
     [SerializeField] GameObject[] allPaths;
     [SerializeField] List<Transform> waypoints;
-    [SerializeField] int nextWaypoint = 0; //inicializando no primeiro waypoint
+     int nextWaypoint = 0; //inicializando no primeiro waypoint
 
+
+    PlayerLife playerLife;
 
     public float speed = 10f;
+    public int dmg = 1;
+
+
 
     [SerializeField] int pathIdx;
     
     void Awake()
     {
+        //referenciar a vida do jogador ao inimigo
+        playerLife = FindObjectOfType<PlayerLife>();
+
         //Busca todos os caminhos criados
         allPaths = GameObject.FindGameObjectsWithTag("Path");
         //Escolhe qual caminho a seguir (aleatoriamente)
@@ -53,7 +61,7 @@ public class EnemyPathing : MonoBehaviour
         }
         else //chegou ao fim (vamos colocar aqui para ele dar dano no jogador)
         {
-            
+            playerLife.playerTakeDamage(dmg);
             Destroy(gameObject);
         }
 
