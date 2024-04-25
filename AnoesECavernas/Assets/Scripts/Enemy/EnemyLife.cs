@@ -33,6 +33,7 @@ public class EnemyLife : MonoBehaviour
     //função pública para tomar dano, adicionar uma referência no script da torre para bater nele
     public void TakeHit(int dmg)
     {
+        Debug.Log("OUCH");
         life -= dmg;
         if(life <= 0 )
         {
