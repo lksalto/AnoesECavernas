@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyPathing : MonoBehaviour
 {
     [SerializeField] GameObject[] allPaths;
+    [SerializeField] GameObject[] nextPath;
     [SerializeField] List<Transform> waypoints;
      int nextWaypoint = 0; //inicializando no primeiro waypoint
 
@@ -25,7 +26,7 @@ public class EnemyPathing : MonoBehaviour
         //referenciar a vida do jogador ao inimigo
         playerLife = FindObjectOfType<PlayerLife>();
 
-        //Busca todos os caminhos criados
+        //Busca todos os caminhos de inicio
         allPaths = GameObject.FindGameObjectsWithTag("Path");
         //Escolhe qual caminho a seguir (aleatoriamente)
         pathIdx = Random.Range(0, allPaths.Length); 
@@ -33,6 +34,19 @@ public class EnemyPathing : MonoBehaviour
         foreach (Transform wp in allPaths[pathIdx].GetComponentInChildren<Transform>())
         {
             waypoints.Add(wp);
+        }
+        //enquanto o caminho n for indentificado como final
+        while (!allPaths[pathIdx].GetComponent<WaypointChanger>().end)
+        {
+            //indentifica os proximos possiveis caminhos
+            allPaths = allPaths[pathIdx].GetComponent<WaypointChanger>().nextpath;
+            // escolhe um caminho aleatorio
+            pathIdx = Random.Range(0, allPaths.Length);
+            //adciona no caminho geral
+            foreach (Transform wp in allPaths[pathIdx].GetComponentInChildren<Transform>())
+            {
+                waypoints.Add(wp);
+            }
         }
         //Se quiser, da pra deixar o primeiro ponto com o spawn do inimigo
         transform.position = waypoints[nextWaypoint].position;
@@ -55,8 +69,8 @@ public class EnemyPathing : MonoBehaviour
             //se chegou no waypoint
             if (transform.position == waypoints[nextWaypoint].position)
             {
-                //ir pro proximo
-                nextWaypoint++;
+                    //ir pro proximo
+                    nextWaypoint++;
             }
         }
         else //chegou ao fim (vamos colocar aqui para ele dar dano no jogador)
