@@ -12,6 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a752d68354a7d448068be592e52b7c, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: 
-  dmg: 1
-  target: {fileID: 0}
-  speed: 15

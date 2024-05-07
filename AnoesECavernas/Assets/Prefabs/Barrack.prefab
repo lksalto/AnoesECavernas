@@ -162,9 +162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f7710f216c0614a8c4db3f8b795170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 11400000, guid: 912899eb54302a84699d3d96333ea118, type: 2}
   target: {fileID: 0}
-  spawn: {fileID: 9002765622828755017}
+  sprite: {fileID: 0}
+  atkDmg: 1
+  atkSpeed: 5
+  atkCd: 0
+  atkClosestEnemy: 0
+  atkRange: 5
+  bulletPrefab: {fileID: 5407503945098333043, guid: d817d2a6880ad6541823416231e99069, type: 3}
+  spawnPoint: {fileID: 9002765622828755017}
 --- !u!61 &2528572856723873469
 BoxCollider2D:
   m_ObjectHideFlags: 0

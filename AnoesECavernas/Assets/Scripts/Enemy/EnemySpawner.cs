@@ -21,6 +21,14 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.parent = null;
         if(qtt > 0)
         {
+            if(Random.Range(0, 10) <= 4)
+            {
+                idx = 0;
+            }
+            else
+            {
+                idx = 1;
+            }
             StartCoroutine(spawnEnemy(enemyList, idx, qtt - 1, cd));
         }
     }
