@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096436688390999321}
   - component: {fileID: 1181735296946838473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sombra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785393577553764021}
   - component: {fileID: 3669396957537996065}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: anao_horrivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 6507815346238093627}
   - component: {fileID: 5683207161586410767}
   - component: {fileID: 3583989619197097837}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -240,8 +240,9 @@ MonoBehaviour:
   allPaths:
   - {fileID: 0}
   - {fileID: 0}
+  nextPath: []
   waypoints: []
-  speed: 3
+  speed: 6
   dmg: 1
   pathIdx: 0
 --- !u!114 &5683207161586410767
@@ -257,7 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
+  magicResist: 0.5
   value: 1
+  speed: 1
   bloodParticle: {fileID: 4977420918896418720, guid: b60c1bdcb926e2749a487849d9555961, type: 3}
 --- !u!70 &3583989619197097837
 CapsuleCollider2D:
@@ -303,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275918810890317256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
