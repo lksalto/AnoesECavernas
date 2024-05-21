@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyLife : MonoBehaviour
 {
     //vida
-    public int life = 1;
-
+    public float life = 1;
+    public float magicResist = 0.5f;
     //qnts dinheiros ele vale ao morrer
     public int value = 1;
-
+    public int speed = 1;
     //particle effect do sangue
     [SerializeField] GameObject bloodParticle;
 
@@ -17,23 +17,24 @@ public class EnemyLife : MonoBehaviour
     PlayerResources playerResources;
 
 
+
     private void Awake()
     {
         playerResources = FindObjectOfType<PlayerResources>();
     }
-    private void Update()
-    {
-        //apenas para testar a função de dano, lembrar de tirar isso
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            TakeHit(1);
-        }
-    }
+
 
     //função pública para tomar dano, adicionar uma referência no script da torre para bater nele
-    public void TakeHit(int dmg)
+    public void TakeHit(float dmg, int type)
     {
-        Debug.Log("OUCH");
+        if ((type == 1))
+        {
+            if(magicResist <= 0)
+            {
+                magicResist = 1;
+            }
+            dmg /= magicResist;
+        }
         life -= dmg;
         if(life <= 0 )
         {

@@ -2,45 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class CannonBall : MonoBehaviour
 {
-    public Bullet bullet;
     public Vector3 targetGround;
 
-    public int dmg;
+    public float dmg;
+    public float radius = 5.0f;
     public GameObject target;
     public float speed;
+    // 0 = fisico, 1 = magico
+    public int dmgType = 0;
 
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        if (target != null)
+        {
+            targetGround = target.transform.position;
+            
+
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (target!=null)
-        {
-            targetGround = target.transform.position;
-            GoToTarget(gameObject.transform, target.transform.position);
 
-        }
-        else
-        {
-            GoToTarget(gameObject.transform, targetGround);
-            
-        }
+        GoToTarget(gameObject.transform, targetGround);
 
 
 
     }
-
     public void GoToTarget(Transform bulletTransform, Vector3 targetPosition)
     {
         Vector3 direction = (targetPosition - bulletTransform.position).normalized;
@@ -50,31 +42,27 @@ public class Arrow : MonoBehaviour
 
         if (Mathf.Abs(transform.position.x - targetPosition.x) < 0.02f && Mathf.Abs((transform.position.y - targetPosition.y)) < 0.02f)
         {
-            if(target != null)
-            {
-                if (target.GetComponent<EnemyLife>() != null)
-                {
-                    DealDamage(dmg);
-
-                }
-            }
-
-            Destroy(gameObject);
+            DealDamage(dmg, dmgType);
 
         }
 
     }
 
-    public void DealDamage(int dmg)
+    public void DealDamage(float dmg, int type)
     {
-        
-        if (target.GetComponent<EnemyLife>() != null)
+
+        Vector2 position = transform.position;
+        int layerMask = LayerMask.GetMask("Enemy");
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(position, radius, layerMask);
+
+        foreach (Collider2D hitCollider in hitColliders)
         {
-            target.GetComponent<EnemyLife>().TakeHit(dmg);
-                   
+            EnemyLife enemyLife = hitCollider.GetComponent<EnemyLife>();
+            if (enemyLife != null)
+            {
+                enemyLife.TakeHit(dmg, type);
+            }
         }
         Destroy(gameObject);
-
-        
     }
 }
