@@ -10,6 +10,7 @@ TagManager:
   - Tower
   - Bullet
   - Change
+  - Cursor
   layers:
   - Default
   - TransparentFX
