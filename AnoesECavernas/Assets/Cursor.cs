@@ -6,7 +6,9 @@ public class Cursor : MonoBehaviour
 {
     private Grid grid;
     public Tilemap caminho;
+    public bool caminhoBool;
     public GameObject Sprit;
+    public Vector2Int TamanhoTilezed;
     private Color color;
     public Color NewColor;
     public Vector3 offset;
@@ -34,13 +36,33 @@ public class Cursor : MonoBehaviour
 
         //restaura o valor de z e aplica offset
         transform.position = offset + new Vector3(transform.position.x,transform.position.y,z) + new Vector3(offsetTilezed.x*grid.cellSize.x, offsetTilezed.y * grid.cellSize.y, 0);
-
+        int[,] matrix=new int[TamanhoTilezed.x,TamanhoTilezed.y];
+        int matrixSum = 0;
+        for (int i = 0; i < TamanhoTilezed.x; i++) 
+        {
+            for (int j = 0; j < TamanhoTilezed.y; j++)
+            {
+                Vector3 gridedpos = rmouseposition + new Vector3((i * grid.cellSize.x), (j * grid.cellSize.y), 0);
+                if (caminho.HasTile(grid.WorldToCell(gridedpos)) && caminho.GetTile(grid.WorldToCell(gridedpos)) != null)
+                {
+                    matrix[i, j] = 1;
+                    Debug.Log("caminho");
+                }
+                else { matrix[i, j] = 0; }
+                matrixSum += matrix[i, j];
+            }
+        }
         
-        if (caminho.HasTile(grid.WorldToCell(rmouseposition)) && caminho.GetTile(grid.WorldToCell(rmouseposition))!=null) 
+        if (matrixSum!=0) 
         {
             Debug.Log("caminho");
             Sprit.GetComponent<SpriteRenderer>().color = NewColor;
+            caminhoBool = true;
         }
-        else { Sprit.GetComponent<SpriteRenderer>().color = color; }
+        else 
+        { 
+            Sprit.GetComponent<SpriteRenderer>().color = color; 
+            caminhoBool = false;
+        }
     }
 }

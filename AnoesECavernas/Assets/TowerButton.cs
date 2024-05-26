@@ -18,6 +18,11 @@ public class TowerButton : MonoBehaviour
     }
     public void CursorTorre(GameObject gamobj) 
     {
+        Transform parent= gamobj.transform.parent;
+        for(int i = 0; i < parent.childCount; i++) 
+        {
+            parent.GetChild(i).gameObject.SetActive(false);
+        }
         gamobj.SetActive(true);
     }
 }
