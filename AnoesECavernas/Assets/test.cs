@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    public string teste,result;
-    public int number,number2;
+    public GameObject drops;
+    Texture2D tex;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,10 @@ public class test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        result = teste.Substring(number,number2);
+        if (drops.GetComponent<DragTest>().map != null) 
+        { 
+            tex = drops.GetComponent<DragTest>().map;
+            GetComponent<SpriteRenderer>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
+        }
     }
 }
