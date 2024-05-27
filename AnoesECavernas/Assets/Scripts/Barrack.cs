@@ -43,8 +43,8 @@ public class Barrack : MonoBehaviour
         {
             atkCd = 5 / atkSpeed;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) ;
-
-            switch(type)
+           
+            switch (type)
             {
                 case 0: 
                     bullet.GetComponent<Arrow>().target = tgt;
@@ -53,6 +53,7 @@ public class Barrack : MonoBehaviour
                     bullet.GetComponent<MagicMissile>().target = tgt;
                     break;
                 case 2:
+                    bullet.transform.rotation = Quaternion.identity;
                     bullet.GetComponent<CannonBall>().target = tgt;
                     break;
             }

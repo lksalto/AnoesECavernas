@@ -1,32 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EnemyLife : MonoBehaviour
 {
     //vida
     public float life = 1;
+    float maxLife;
     public float magicResist = 0.5f;
+    public float initialSpeed;
+    public float speed = 10f;
+    public int dmg = 1;
+    public float slowTimer=0;
+    public float slowCounter=0;
+    bool isRooted = false;
+
     //qnts dinheiros ele vale ao morrer
     public int value = 1;
-    public int speed = 1;
     //particle effect do sangue
     [SerializeField] GameObject bloodParticle;
 
     //Referencia pra dar dinheiro ao player
     PlayerResources playerResources;
 
+    private float flashDuration = 0.1f;
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+    private Material originalMaterial;
+    [SerializeField] Material whiteFlashMaterial;
+    public GameObject hitCanvasPrefab;
+    public Image lifeBar;
+    [SerializeField] Transform hitSpawn;
 
     private void Awake()
     {
+
         playerResources = FindObjectOfType<PlayerResources>();
+        maxLife = life;
+        originalMaterial = spriteRenderer.material;
+
     }
 
+    private void Update()
+    {
+        CheckSpeed();
+        
+    }
 
     //função pública para tomar dano, adicionar uma referência no script da torre para bater nele
     public void TakeHit(float dmg, int type)
     {
+
+        TriggerFlash();
         if ((type == 1))
         {
             if(magicResist <= 0)
@@ -36,7 +61,22 @@ public class EnemyLife : MonoBehaviour
             dmg /= magicResist;
         }
         life -= dmg;
-        if(life <= 0 )
+
+        GameObject hit = Instantiate(hitCanvasPrefab, hitSpawn.position, Quaternion.identity);
+
+        hit.GetComponent<HitText>().text.text = dmg.ToString();
+        if (type == 0)
+        {
+            hit.GetComponent<HitText>().text.color = Color.red;
+        }
+        else
+        {
+            hit.GetComponent<HitText>().text.color = Color.blue;
+        }
+        Destroy(hit, 0.3f);
+
+        lifeBar.fillAmount = life/maxLife;
+        if (life <= 0)
         {
             Die();
         }
@@ -51,4 +91,59 @@ public class EnemyLife : MonoBehaviour
         Destroy(blood, 0.8f);
         Destroy(gameObject);
     }
+    public void TriggerFlash()
+    {
+        StartCoroutine(FlashCoroutine());
+    }
+
+    private IEnumerator FlashCoroutine()
+    {
+        spriteRenderer.material = whiteFlashMaterial;
+
+        yield return new WaitForSeconds(flashDuration);
+
+        spriteRenderer.material = originalMaterial;
+    }
+
+    public void GetRooted(float secs)
+    {
+        StartCoroutine(RootEnemy(secs));
+    }
+
+    IEnumerator RootEnemy(float s)
+    {
+        isRooted = true;
+        speed = 0;
+        spriteRenderer.color = new Color(0.678f, 0.847f, 1.0f, 1.0f); // Slightly light blue color
+        yield return new WaitForSeconds(s);
+        isRooted = false;
+        speed = initialSpeed;
+        spriteRenderer.color = Color.white;
+    }
+
+    public void Slow(float qtt)
+    {
+        
+        slowCounter = qtt;
+        speed = initialSpeed / qtt;
+    }
+
+    void CheckSpeed()
+    {
+        if(!isRooted)
+        {
+            slowTimer -= Time.deltaTime;
+            if (slowTimer > 0)
+            {
+                speed = initialSpeed;
+
+            }
+            else
+            {
+                speed = initialSpeed;
+            }
+        }
+        
+    }
+
 }

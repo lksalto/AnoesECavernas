@@ -165,7 +165,7 @@ MonoBehaviour:
   target: {fileID: 0}
   type: 1
   sprite: {fileID: 0}
-  atkDmg: 1
+  atkDmg: 2
   atkSpeed: 5
   atkCd: 0
   atkClosestEnemy: 0

@@ -11,18 +11,18 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] List<Transform> waypoints;
      int nextWaypoint = 0; //inicializando no primeiro waypoint
 
+    public int dmg;
 
     PlayerLife playerLife;
-
-    public float speed = 10f;
-    public int dmg = 1;
-
+    EnemyLife enemyLife;
 
 
     [SerializeField] int pathIdx;
     
     void Awake()
     {
+        enemyLife = GetComponent<EnemyLife>();
+        dmg = enemyLife.dmg;
         //referenciar a vida do jogador ao inimigo
         playerLife = FindObjectOfType<PlayerLife>();
 
@@ -56,6 +56,7 @@ public class EnemyPathing : MonoBehaviour
     void Update()
     {
        GoToNextWp();
+
     }
 
     //Ir para o proximo Waypoint
@@ -65,7 +66,7 @@ public class EnemyPathing : MonoBehaviour
         if(nextWaypoint < waypoints.Count)
         {
             //mover o inimigo
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[nextWaypoint].position, speed*Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[nextWaypoint].position, enemyLife.speed*Time.deltaTime);
             //se chegou no waypoint
             if (transform.position == waypoints[nextWaypoint].position)
             {
@@ -80,4 +81,6 @@ public class EnemyPathing : MonoBehaviour
         }
 
     }
+
+
 }
