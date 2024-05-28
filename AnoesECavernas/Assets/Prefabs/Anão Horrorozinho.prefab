@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 5683207161586410767}
   - component: {fileID: 3583989619197097837}
   m_Layer: 3
-  m_Name: Enemy
+  m_Name: "An\xE3o Horrorozinho"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

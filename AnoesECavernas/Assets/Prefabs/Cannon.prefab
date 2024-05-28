@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  type: 0
+  type: 2
   sprite: {fileID: 0}
   atkDmg: 1
   atkSpeed: 3
