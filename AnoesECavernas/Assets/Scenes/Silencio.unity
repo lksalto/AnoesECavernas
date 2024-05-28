@@ -404,7 +404,6 @@ RectTransform:
   - {fileID: 481514209}
   - {fileID: 849564486}
   - {fileID: 583490410}
-  - {fileID: 849564486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

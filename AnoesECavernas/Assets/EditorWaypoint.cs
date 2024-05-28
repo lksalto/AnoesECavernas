@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class EditorWaypoint : MonoBehaviour
 {
-    public GameObject waypoint,PathPrefab,CurrentPath;
-    private bool MouseUI;
-    public int CurrentBifurcations;
+    public float radius = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,41 +14,16 @@ public class EditorWaypoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject() && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.CompareTag("Botão"))
-        {
-            MouseUI = true;
+        Vector3 rmouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float dif= Mathf.Abs(rmouseposition.x - transform.position.x);
+        float dif2= Mathf.Abs(rmouseposition.y - transform.position.y);
+        if (dif<= radius && dif2<=radius)
+        { 
+            GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 50);
         }
-        else { MouseUI = false; }
-        if (Input.GetMouseButtonDown(0) && !MouseUI)
+        else 
         {
-            Waypoint();
-            transform.gameObject.SetActive(false);
-        }
-    }
-    void Waypoint() 
-    {
-        if(CurrentPath == null) 
-        {
-            GameObject AllPath = GameObject.FindGameObjectWithTag("AllPath");
-            Instantiate(PathPrefab, transform.position, transform.rotation, AllPath.transform);
-            CurrentPath = AllPath.transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            Instantiate(waypoint, transform.position, transform.rotation, CurrentPath.transform);
-
+            GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         }
     }
-    void Bifurca() 
-    {
-        if (CurrentPath != null)
-        {
-            CurrentBifurcations++;
-            CurrentPath.GetComponent<WaypointChanger>().nextpath = new GameObject[CurrentBifurcations];
-            Instantiate(waypoint, transform.position, transform.rotation, CurrentPath.transform);
-
-
-        }
-    }
-    void Fim() { }
 }

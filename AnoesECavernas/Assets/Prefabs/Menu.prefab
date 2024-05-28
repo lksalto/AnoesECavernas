@@ -418,6 +418,8 @@ GameObject:
   - component: {fileID: 5780497954227342370}
   - component: {fileID: 721455269165355854}
   - component: {fileID: 4352360275311889902}
+  - component: {fileID: 2924256502955134736}
+  - component: {fileID: 506083557956444554}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -496,6 +498,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Escable: 1
+--- !u!225 &2924256502955134736
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306437046477178857}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &506083557956444554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306437046477178857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17027915a7c832247a7307b8471cfcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvagroup: {fileID: 4760470489186490527}
 --- !u!1 &3200362008075496875
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5849056, g: 0.24750704, b: 0.09104664, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
