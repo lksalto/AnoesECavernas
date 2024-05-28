@@ -169,8 +169,8 @@ MonoBehaviour:
   atkSpeed: 3
   atkCd: 0
   atkClosestEnemy: 0
-  atkRange: 3
-  bulletPrefab: {fileID: 5407503945098333043, guid: d817d2a6880ad6541823416231e99069, type: 3}
+  atkRange: 8
+  bulletPrefab: {fileID: 1685485808756442339, guid: c60a0ac3048085c4b9c90f98c35f5159, type: 3}
   spawnPoint: {fileID: 9002765622828755017}
 --- !u!61 &2528572856723873469
 BoxCollider2D:
