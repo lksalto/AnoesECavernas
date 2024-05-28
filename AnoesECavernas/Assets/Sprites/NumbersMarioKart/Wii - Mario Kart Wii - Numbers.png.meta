@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 84df43963c8bc9146827b57b7b4fdf83
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_9
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6708b2fbbbad13b4e8f3ca837c18fa35
+      internalID: -96087036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_10
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ce5ee3cd6216e48a32b1d5a4ddb187
+      internalID: 214703120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_11
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0fe1620ca7b954ba6b9b2b7b690867
+      internalID: -568182305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_12
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4c0c70b4e85ee4da14de077639419a
+      internalID: -419202650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_13
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033c40c659e025f439fd01a5b2556eae
+      internalID: -956228575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_14
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 198
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ffcadcbda0b954bb55897b0a51eb32
+      internalID: -1223048147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_15
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 200
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f787fef1bc3d498461a12ba2ec659
+      internalID: 1649618700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_16
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 200
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71297a638fc85714796cbe4e70ca58f1
+      internalID: 1747823783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_17
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 200
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b6109ecccc03746a6aa9bb1be9270a
+      internalID: -1075836422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wii - Mario Kart Wii - Numbers_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 91
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19bacbe693414524793e27b869036460
+      internalID: -1446905039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Wii - Mario Kart Wii - Numbers_0: -862918134
+      Wii - Mario Kart Wii - Numbers_1: -1380081175
+      Wii - Mario Kart Wii - Numbers_10: 214703120
+      Wii - Mario Kart Wii - Numbers_11: -568182305
+      Wii - Mario Kart Wii - Numbers_12: -419202650
+      Wii - Mario Kart Wii - Numbers_13: -956228575
+      Wii - Mario Kart Wii - Numbers_14: -1223048147
+      Wii - Mario Kart Wii - Numbers_15: 1649618700
+      Wii - Mario Kart Wii - Numbers_16: 1747823783
+      Wii - Mario Kart Wii - Numbers_17: -1075836422
+      Wii - Mario Kart Wii - Numbers_18: -1446905039
+      Wii - Mario Kart Wii - Numbers_19: -302002866
+      Wii - Mario Kart Wii - Numbers_2: -397142604
+      Wii - Mario Kart Wii - Numbers_20: -1271741095
+      Wii - Mario Kart Wii - Numbers_21: 1311053219
+      Wii - Mario Kart Wii - Numbers_22: -2070292313
+      Wii - Mario Kart Wii - Numbers_23: -822744270
+      Wii - Mario Kart Wii - Numbers_24: -759036114
+      Wii - Mario Kart Wii - Numbers_25: 638590382
+      Wii - Mario Kart Wii - Numbers_26: -1519003001
+      Wii - Mario Kart Wii - Numbers_3: 1165287075
+      Wii - Mario Kart Wii - Numbers_4: -1772134180
+      Wii - Mario Kart Wii - Numbers_5: 1938193149
+      Wii - Mario Kart Wii - Numbers_6: 788080759
+      Wii - Mario Kart Wii - Numbers_7: -703198030
+      Wii - Mario Kart Wii - Numbers_8: -1186894470
+      Wii - Mario Kart Wii - Numbers_9: -96087036
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

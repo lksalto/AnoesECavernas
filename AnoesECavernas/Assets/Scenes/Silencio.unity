@@ -402,6 +402,7 @@ RectTransform:
   - {fileID: 1391227492}
   - {fileID: 1458631506}
   - {fileID: 481514209}
+  - {fileID: 849564486}
   - {fileID: 583490410}
   - {fileID: 849564486}
   m_Father: {fileID: 0}
@@ -1511,10 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25b8e8d2c5513b429871f941d452b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teste: 0123456789
-  result: 
-  number: 2
-  number2: 0
+  drops: {fileID: 0}
 --- !u!114 &481514211
 MonoBehaviour:
   m_ObjectHideFlags: 0
