@@ -42,7 +42,7 @@ public class Barrack : MonoBehaviour
         if ((!atkClosestEnemy || atkClosestEnemy) && atkCd < 0 && atkSpeed > 0)
         {
             atkCd = 5 / atkSpeed;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) ;
+            GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity) ;
            
             switch (type)
             {
