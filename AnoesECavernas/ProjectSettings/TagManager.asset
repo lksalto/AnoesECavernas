@@ -12,6 +12,7 @@ TagManager:
   - Change
   - Cursor
   - "Bot\xE3o"
+  - GameManager
   layers:
   - Default
   - TransparentFX

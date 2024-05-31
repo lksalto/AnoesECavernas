@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 535822158}
   m_Layer: 0
   m_Name: GameManager - R
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10074,6 +10074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 4fa5500cae9e13e43af1f19dce24bfdc, type: 3}
+  coins: 10
 --- !u!114 &1094908036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10430,6 +10431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 69146a797eb9a2d45aa60b870b0f3e27, type: 3}
+  coins: 10
 --- !u!114 &1220079702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12611,6 +12613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 35b7fe26eb696d049b4b0a6dd44b858c, type: 3}
+  coins: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
