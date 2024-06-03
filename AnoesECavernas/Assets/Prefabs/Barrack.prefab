@@ -163,12 +163,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  type: 0
   sprite: {fileID: 0}
   atkDmg: 1
-  atkSpeed: 5
+  atkSpeed: 80
   atkCd: 0
   atkClosestEnemy: 0
-  atkRange: 5
+  atkRange: 10
   bulletPrefab: {fileID: 5407503945098333043, guid: d817d2a6880ad6541823416231e99069, type: 3}
   spawnPoint: {fileID: 9002765622828755017}
 --- !u!61 &2528572856723873469
