@@ -20,6 +20,7 @@ public class Barrack : MonoBehaviour
     public GameObject bulletPrefab;
     public UnityEngine.Transform spawnPoint;
 
+    public int price = 5;
 
     void Start()
     {

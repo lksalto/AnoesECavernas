@@ -88,6 +88,12 @@ public class EnemyLife : MonoBehaviour
         playerResources.AddResource(value);
         GameObject blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
         blood.transform.parent = null;
+        EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
+        EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
+        if (obj.Length == 1 && spawn.qtty <= 0)
+        {
+            FindObjectOfType<PlayerLife>().EndGame(true);
+        }
         Destroy(blood, 0.8f);
         Destroy(gameObject);
     }

@@ -10,6 +10,8 @@ public class PlayerLife : MonoBehaviour
 
     //texto da vida
     [SerializeField] TextMeshProUGUI lifeText;
+
+    public GameObject endGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +30,27 @@ public class PlayerLife : MonoBehaviour
         lifeText.text = life.ToString();
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     void LoseGame()
     {
         //no momento restarta a cena, mas iremos mudar para mostrar o game over
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        EndGame(false);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void EndGame(bool victory)
+    {
+        endGame.SetActive(true);
+        if(victory)
+        {
+            endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "VITORIA <3";
+        }
+        else
+        {
+            endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "DERROTA </3";
+        }
     }
 }

@@ -46,4 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesPrefabs:
   - {fileID: 6672500826481072232, guid: 3a09fb690e615ab4abed0151b6dbfc4b, type: 3}
-  cd: 1
+  - {fileID: 6672500826481072232, guid: 2da3292cb40d2194094af3fe531e7b69, type: 3}
+  - {fileID: 6672500826481072232, guid: b68f445007719d14da1afefdf75a9ccd, type: 3}
+  - {fileID: 6672500826481072232, guid: 6dd82e0c4b711a34cbf2a4e8a452676d, type: 3}
+  cooldDown: 1
+  qtt: 100

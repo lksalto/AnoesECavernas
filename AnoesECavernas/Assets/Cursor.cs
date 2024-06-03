@@ -46,7 +46,7 @@ public class Cursor : MonoBehaviour
                 if (caminho.HasTile(grid.WorldToCell(gridedpos)) && caminho.GetTile(grid.WorldToCell(gridedpos)) != null)
                 {
                     matrix[i, j] = 1;
-                    Debug.Log("caminho");
+                    
                 }
                 else { matrix[i, j] = 0; }
                 matrixSum += matrix[i, j];
@@ -55,7 +55,7 @@ public class Cursor : MonoBehaviour
         
         if (matrixSum!=0) 
         {
-            Debug.Log("caminho");
+            
             Sprit.GetComponent<SpriteRenderer>().color = NewColor;
             caminhoBool = true;
         }

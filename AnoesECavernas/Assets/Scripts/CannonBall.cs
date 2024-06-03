@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Search;
+
 using UnityEngine;
 
 public class CannonBall : MonoBehaviour
@@ -16,7 +16,7 @@ public class CannonBall : MonoBehaviour
     SpriteRenderer indicatorSR;
     GameObject indicator;
     private float travelTime;
-    private bool isAscending = true;
+    
     public float maxHeight = 1.0f; // Maximum height of the cannonball's motion
     public float currentHeight = 0.0f; // Current height of the cannonball
     public float ascendSpeed = 1.0f; // Speed at which the cannonball ascends

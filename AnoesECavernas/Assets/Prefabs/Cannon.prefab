@@ -166,12 +166,13 @@ MonoBehaviour:
   type: 2
   sprite: {fileID: 0}
   atkDmg: 1
-  atkSpeed: 3
+  atkSpeed: 2
   atkCd: 0
   atkClosestEnemy: 0
   atkRange: 8
   bulletPrefab: {fileID: 1685485808756442339, guid: c60a0ac3048085c4b9c90f98c35f5159, type: 3}
   spawnPoint: {fileID: 9002765622828755017}
+  price: 30
 --- !u!61 &2528572856723873469
 BoxCollider2D:
   m_ObjectHideFlags: 0
