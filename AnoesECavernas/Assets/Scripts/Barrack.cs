@@ -20,6 +20,8 @@ public class Barrack : MonoBehaviour
     public GameObject bulletPrefab;
     public UnityEngine.Transform spawnPoint;
 
+    [SerializeField] LayerMask layerMask;
+
     public int price = 5;
 
     void Start()
@@ -65,7 +67,7 @@ public class Barrack : MonoBehaviour
     public void DetectEnemy(Vector3 pos)
     {
         
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, atkRange);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, atkRange, layerMask);
         if (colliders.Length > 0)
         {
             target = colliders[0].gameObject;

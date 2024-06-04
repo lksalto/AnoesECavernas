@@ -32,9 +32,11 @@ public class EnemyLife : MonoBehaviour
     public Image lifeBar;
     [SerializeField] Transform hitSpawn;
 
+
+    Animator anim;
     private void Awake()
     {
-
+        anim = GetComponent<Animator>();
         playerResources = FindObjectOfType<PlayerResources>();
         maxLife = life;
         originalMaterial = spriteRenderer.material;
@@ -88,12 +90,7 @@ public class EnemyLife : MonoBehaviour
         playerResources.AddResource(value);
         GameObject blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
         blood.transform.parent = null;
-        EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
-        EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
-        if (obj.Length == 1 && spawn.qtty <= 0)
-        {
-            FindObjectOfType<PlayerLife>().EndGame(true);
-        }
+        CheckGameOver();
         Destroy(blood, 0.8f);
         Destroy(gameObject);
     }
@@ -120,9 +117,11 @@ public class EnemyLife : MonoBehaviour
     {
         isRooted = true;
         speed = 0;
-        spriteRenderer.color = new Color(0.678f, 0.847f, 1.0f, 1.0f); // Slightly light blue color
+        spriteRenderer.color = new Color(0.678f, 0.847f, 1.0f, 1.0f);
+        anim.speed = 0;
         yield return new WaitForSeconds(s);
         isRooted = false;
+        anim.speed = 1;
         speed = initialSpeed;
         spriteRenderer.color = Color.white;
     }
@@ -151,5 +150,13 @@ public class EnemyLife : MonoBehaviour
         }
         
     }
-
+    public void CheckGameOver()
+    {
+        EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
+        EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
+        if (obj.Length == 1 && spawn.qtty <= 0)
+        {
+            FindObjectOfType<PlayerLife>().EndGame(true);
+        }
+    }
 }

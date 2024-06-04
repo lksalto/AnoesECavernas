@@ -486,7 +486,7 @@ MonoBehaviour:
   magicResist: 0.1
   initialSpeed: 1
   speed: 1
-  dmg: 5
+  dmg: 10
   slowTimer: 0
   slowCounter: 0
   value: 100

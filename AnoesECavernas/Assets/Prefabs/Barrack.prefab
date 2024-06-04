@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 4432332185867611358}
   - component: {fileID: 7421835491299523553}
   - component: {fileID: 2528572856723873469}
+  - component: {fileID: -185745775014541056}
   m_Layer: 0
   m_Name: Barrack
   m_TagString: Tower
@@ -172,6 +173,9 @@ MonoBehaviour:
   atkRange: 10
   bulletPrefab: {fileID: 5407503945098333043, guid: d817d2a6880ad6541823416231e99069, type: 3}
   spawnPoint: {fileID: 9002765622828755017}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
   price: 15
 --- !u!61 &2528572856723873469
 BoxCollider2D:
@@ -180,7 +184,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3318643499153440037}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -202,10 +206,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029914618, y: -0.13960093}
+  m_Offset: {x: 0.03174019, y: -0.10757518}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -216,8 +220,35 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3390307, y: 1.7179476}
+  m_Size: {x: 1.3283749, y: 0.95867205}
   m_EdgeRadius: 0
+--- !u!50 &-185745775014541056
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318643499153440037}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6493312548171619725
 GameObject:
   m_ObjectHideFlags: 0

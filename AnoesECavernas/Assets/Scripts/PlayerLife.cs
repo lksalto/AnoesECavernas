@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     //vida
-    int life = 5;
+    public int life = 5;
 
     //texto da vida
     [SerializeField] TextMeshProUGUI lifeText;

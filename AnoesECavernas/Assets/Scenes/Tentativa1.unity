@@ -1279,6 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6108e6a6f0eaa49ba9f485356ae9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 10
   lifeText: {fileID: 2011766592}
   endGame: {fileID: 1592623326}
 --- !u!4 &535822157
@@ -7477,8 +7478,8 @@ Tilemap:
   - first: {x: -16, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9678,7 +9679,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: c4c4eebf7d921ac46a4a610c2a413fcd, type: 2}
-  - m_RefCount: 497
+  - m_RefCount: 496
     m_Data: {fileID: 11400000, guid: d705fce8f6a9e46469b585f42f6a3705, type: 2}
   - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: e4b02464eeeb3fd4e900fedfa3a74b00, type: 2}
@@ -9700,10 +9701,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 1b5bd25c5391ad24580b6017b73507c2, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: bf2f26947300e7846bd50cac6505d2b8, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 9975d4bb0dfdc64438b720b9fd8f8d20, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 3
     m_Data: {fileID: 681712531, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
-  - m_RefCount: 497
+  - m_RefCount: 496
     m_Data: {fileID: -412593283, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
   - m_RefCount: 22
     m_Data: {fileID: 1122206451, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
@@ -9725,6 +9728,8 @@ Tilemap:
     m_Data: {fileID: -41448350, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 167996701, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1127062859, guid: 6a1bd7bb41206db4fa91fcfca96c1598, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 676
     m_Data:
@@ -10126,9 +10131,11 @@ GameObject:
   - component: {fileID: 1094908034}
   - component: {fileID: 1094908036}
   - component: {fileID: 1094908035}
+  - component: {fileID: 1094908038}
+  - component: {fileID: 1094908037}
   m_Layer: 0
   m_Name: Torre2Cursor
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10163,6 +10170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 4fa5500cae9e13e43af1f19dce24bfdc, type: 3}
   coins: 10
+  sr: {fileID: 581437944}
+  rangePrefab: {fileID: 6621310793945236984, guid: 218602e252d00f046a0cbd81772775a0, type: 3}
 --- !u!114 &1094908036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10182,6 +10191,78 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+--- !u!50 &1094908037
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094908033}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1094908038
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094908033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1103875216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10487,9 +10568,11 @@ GameObject:
   - component: {fileID: 1220079700}
   - component: {fileID: 1220079702}
   - component: {fileID: 1220079701}
+  - component: {fileID: 1220079704}
+  - component: {fileID: 1220079703}
   m_Layer: 0
   m_Name: Torre3Cursor
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10524,6 +10607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 69146a797eb9a2d45aa60b870b0f3e27, type: 3}
   coins: 10
+  sr: {fileID: 1832402193}
+  rangePrefab: {fileID: 6621310793945236984, guid: 218602e252d00f046a0cbd81772775a0, type: 3}
 --- !u!114 &1220079702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10543,6 +10628,78 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+--- !u!50 &1220079703
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220079699}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1220079704
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220079699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1236011984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11412,8 +11569,8 @@ MonoBehaviour:
   caminhoBool: 0
   Sprit: {fileID: 1545928937}
   TamanhoTilezed: {x: 1, y: 1}
-  NewColor: {r: 1, g: 0, b: 0, a: 1}
-  offset: {x: 0, y: 0, z: 0}
+  NewColor: {r: 1, g: 0.11425171, b: 0, a: 1}
+  offset: {x: 1, y: 0.5, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
 --- !u!4 &1545928940
 Transform:
@@ -13171,9 +13328,11 @@ GameObject:
   - component: {fileID: 8511955825352727035}
   - component: {fileID: 8511955825352727036}
   - component: {fileID: 8511955825352727037}
+  - component: {fileID: 8511955825352727039}
+  - component: {fileID: 8511955825352727038}
   m_Layer: 0
   m_Name: Torre1Cursor
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13242,6 +13401,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tower: {fileID: 3318643499153440037, guid: 35b7fe26eb696d049b4b0a6dd44b858c, type: 3}
   coins: 10
+  sr: {fileID: 629773304943404922}
+  rangePrefab: {fileID: 6621310793945236984, guid: 218602e252d00f046a0cbd81772775a0, type: 3}
+--- !u!50 &8511955825352727038
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326359026909775872}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &8511955825352727039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326359026909775872}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.038933992, y: -0.038934052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9084592, y: 2.116106}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

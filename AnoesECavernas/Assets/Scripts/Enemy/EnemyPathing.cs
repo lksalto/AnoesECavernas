@@ -77,6 +77,7 @@ public class EnemyPathing : MonoBehaviour
         else //chegou ao fim (vamos colocar aqui para ele dar dano no jogador)
         {
             playerLife.playerTakeDamage(dmg);
+            enemyLife.CheckGameOver();
             Destroy(gameObject);
         }
 

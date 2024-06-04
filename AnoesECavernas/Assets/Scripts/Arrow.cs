@@ -12,15 +12,6 @@ public class Arrow : MonoBehaviour
     public float speed;
 
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +27,6 @@ public class Arrow : MonoBehaviour
             GoToTarget(gameObject.transform, targetGround);
             
         }
-
 
 
     }
