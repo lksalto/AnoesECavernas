@@ -10,7 +10,7 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] GameObject[] nextPath;
     [SerializeField] List<Transform> waypoints;
      int nextWaypoint = 0; //inicializando no primeiro waypoint
-
+    public float distanceTravelled = 0;
     public int dmg;
 
     PlayerLife playerLife;
@@ -52,13 +52,13 @@ public class EnemyPathing : MonoBehaviour
         transform.position = waypoints[nextWaypoint].position;
     }
 
-    
+
     void Update()
     {
-       GoToNextWp();
+        GoToNextWp();
 
+        CalculateDistance();
     }
-
     //Ir para o proximo Waypoint
     void GoToNextWp()
     {
@@ -82,6 +82,9 @@ public class EnemyPathing : MonoBehaviour
         }
 
     }
-
+    void CalculateDistance()
+    {
+        distanceTravelled += Time.deltaTime * enemyLife.speed;
+    }
 
 }
