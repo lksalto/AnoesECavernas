@@ -26,7 +26,8 @@ public class LevelEditor : MonoBehaviour
     {
         public string Name;
         public Texture2D map;
-        public Vector3Int offset;
+        public Vector3Int offsetTilezed;
+        public Vector3 offset;
         public EditorTile[] tiles;
 
     }
@@ -63,12 +64,13 @@ public class LevelEditor : MonoBehaviour
                     if (AllTiles[j].tiles[i].UseGameObject)
                     {
                         Debug.Log("Gam");
-                        Instantiate(AllTiles[j].tiles[i].gamObj, new Vector3Int(x, y, 0) - AllTiles[j].offset, Quaternion.identity, AllTiles[j].tiles[i].parent.transform );
+                        Vector3 worldpos = AllTiles[j].tiles[i].TilemapUsado.CellToWorld(new Vector3Int(x, y, 0) - AllTiles[j].offsetTilezed)+ AllTiles[j].offset;
+                        worldpos = new Vector3(worldpos.x, worldpos.y, 0);
+                        Instantiate(AllTiles[j].tiles[i].gamObj, worldpos, Quaternion.identity, AllTiles[j].tiles[i].parent.transform);
                     }
                     if (AllTiles[j].tiles[i].UseTile)
                     {
-                        AllTiles[j].tiles[i].TilemapUsado.SetTile(new Vector3Int(x, y, 0) - AllTiles[j].
-                            offset, AllTiles[j].tiles[i].tile);
+                        AllTiles[j].tiles[i].TilemapUsado.SetTile(new Vector3Int(x, y, 0) - AllTiles[j].offsetTilezed, AllTiles[j].tiles[i].tile);
                     }
                 }
             }

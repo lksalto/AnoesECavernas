@@ -61,7 +61,7 @@ public class Cursor : MonoBehaviour
         }
         else 
         { 
-            //Sprit.GetComponent<SpriteRenderer>().color = color; 
+            Sprit.GetComponent<SpriteRenderer>().color = color; 
             caminhoBool = false;
         }
     }
