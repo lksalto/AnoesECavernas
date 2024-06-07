@@ -37,24 +37,24 @@ public class Dialog : MonoBehaviour
         {
             
             //pega os gameobject
-            AllDialogsAux[i] = transform.GetChild(0).gameObject.transform.GetChild(i).gameObject;
+            AllDialogsAux[i] = transform.GetChild(0).GetChild(i).gameObject;
 
             if(i==0)
             { 
                 //Torna cName o nome do primeiro dialogo(deve ser obrigatoriamente um dialogo e n subdialogo)
                 cName = AllDialogsAux[i].name;
-                BinaryDialogStart[i] = 1;
+                BinaryDialogStart[i] = 1; //Indentifica como dialogo
                 dialogcount++;
             }
             else if (cName== AllDialogsAux[i].name.Substring(0, cName.Length)) //compara se o nome é o mesmo
             {
-                BinaryDialogStart[i] = 0;
+                BinaryDialogStart[i] = 0;//Indentifica como subdialogo
             }
             else 
             {
                 //Muda o cName para o nome do proximo dialogo
                 cName = AllDialogsAux[i].name;
-                BinaryDialogStart[i] = 1;
+                BinaryDialogStart[i] = 1;//Indentifica como dialogo
                 dialogcount++;
             }
         }
@@ -70,12 +70,12 @@ public class Dialog : MonoBehaviour
         //faz a cotagem dos subdialogos e armazena na matrix
         for(int i=1; i<childCount; i++) 
         {
-            
+            //Se for dialogo
             if (BinaryDialogStart[i] == 1)
-            {
-                subdialogmatrix[dialogtracker] = subdialogtracker;
-                dialogtracker++;
-                subdialogtracker = 1;
+            {                                                     //      Nmr de subdialogs em cada dialog
+                subdialogmatrix[dialogtracker] = subdialogtracker;//Exemplo: [Dialog1,Dialog2,Dialog3];
+                dialogtracker++;                                  //         [   1   ,   5   ,   2   ];
+                subdialogtracker = 1;                             
             }
             else 
             {
@@ -135,7 +135,7 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) { DialogEnd(Conversa); }
     }
 
-    void DialogStart(int DialogId) 
+    public void DialogStart(int DialogId) 
     {
         if (Conversa == -1)
         {
@@ -144,7 +144,7 @@ public class Dialog : MonoBehaviour
             Conversa = DialogId;
         }
     }
-    void DialogEnd(int DialogId)
+    public void DialogEnd(int DialogId)
     {
         if (DialogId != -1)
         {
@@ -173,6 +173,16 @@ public class Dialog : MonoBehaviour
                 }
             }
         }
+    }
+    public void ChangeDialogId(int DialogId) 
+    {
+        TestDialogId=DialogId;
+    }
+    public void DialogButton(int NewDialogId) 
+    {
+        DialogEnd(Conversa);
+        ChangeDialogId(NewDialogId);
+        DialogStart(NewDialogId);
     }
     
 }
