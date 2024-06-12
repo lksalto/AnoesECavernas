@@ -25,6 +25,10 @@ public class Dialog : MonoBehaviour
 
         public GameObject[] gameObj;
     }
+
+
+    public int TestDialogId, Conversa;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +50,7 @@ public class Dialog : MonoBehaviour
                 BinaryDialogStart[i] = 1; //Indentifica como dialogo
                 dialogcount++;
             }
-            else if (cName== AllDialogsAux[i].name.Substring(0, cName.Length)) //compara se o nome é o mesmo
+            else if (AllDialogsAux[i].name.Length>= cName.Length && cName == AllDialogsAux[i].name.Substring(0, cName.Length)) //compara se o nome é o mesmo
             {
                 BinaryDialogStart[i] = 0;//Indentifica como subdialogo
             }
@@ -123,18 +127,30 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public int TestDialogId,Conversa;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) {DialogStart(TestDialogId);}
-        if (Input.GetKeyDown(KeyCode.Alpha1)) { TestDialogId = 0; }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { TestDialogId = 1; }
-        if (Input.GetKeyDown(KeyCode.Alpha3)) { TestDialogId = 2; }
+        //if (Input.GetKeyDown(KeyCode.Alpha1)) { TestDialogId = 0; }
+        //if (Input.GetKeyDown(KeyCode.Alpha2)) { TestDialogId = 1; }
+        //if (Input.GetKeyDown(KeyCode.Alpha3)) { TestDialogId = 2; }
         if (Input.GetKeyDown(KeyCode.Space)) { DialogEnd(Conversa); }
     }
-
+    public int DialogIdByName(string name) 
+    {
+        int DialogId = 0;
+        for (int i = 0; i < AllDialogs.Length; i++)
+        {
+            if (AllDialogs[i].Name == name)
+            {
+                Debug.Log("Id: "+i.ToString());
+                DialogId = i;
+                break;
+            }
+        }
+        return DialogId;
+    }
     public void DialogStart(int DialogId) 
     {
         if (Conversa == -1)
@@ -174,15 +190,9 @@ public class Dialog : MonoBehaviour
             }
         }
     }
-    public void ChangeDialogId(int DialogId) 
+    public void DialogChangeId(int DialogId) 
     {
         TestDialogId=DialogId;
-    }
-    public void DialogButton(int NewDialogId) 
-    {
-        DialogEnd(Conversa);
-        ChangeDialogId(NewDialogId);
-        DialogStart(NewDialogId);
     }
     
 }

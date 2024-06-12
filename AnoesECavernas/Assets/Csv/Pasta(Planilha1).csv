@@ -1,0 +1,10 @@
+Nome;Noe;
+Txt;Aqui vai texto1;Barbapinga
+Txt;Aqui vai texto2;anao
+AddButton;StartDialog;CSVDialog
+Nome;CSVDialog;
+Txt;Aqui vai o texto1;anao
+Txt;Aqui vai o texto2;Barbapinga
+AddButton;StartDialog;Noe
+
+
