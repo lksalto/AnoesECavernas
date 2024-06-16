@@ -13,6 +13,8 @@ TagManager:
   - Cursor
   - "Bot\xE3o"
   - GameManager
+  - MiddlePath
+  - EnemyEditor
   layers:
   - Default
   - TransparentFX

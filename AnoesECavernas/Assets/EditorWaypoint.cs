@@ -11,7 +11,10 @@ public class EditorWaypoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (CursorEditor == null) 
+        {
+            CursorEditor = GameObject.FindGameObjectWithTag("Cursor");
+        }
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class EditorWaypoint : MonoBehaviour
                     //Ele começa a carregar ESTE objeto
                     CursorEditor.GetComponent<CursorEditor>().PointClicked = transform.gameObject;
                     //Se ESTE objeto for um path
-                    if (transform.tag=="Path") 
+                    if (transform.tag=="Path" || transform.tag == "MiddlePath") 
                     {
                         //Seta que o caminho não é um fim
                         GetComponent<WaypointChanger>().end = false; 
@@ -40,10 +43,10 @@ public class EditorWaypoint : MonoBehaviour
                 else 
                 {
                     //Se ESTE objeto for um path
-                    if (transform.tag == "Path")
+                    if (transform.tag == "Path"|| transform.tag == "MiddlePath")
                     {
                         //Se o objeto carregado for um path
-                        if (CursorEditor.GetComponent<CursorEditor>().PointClicked.tag=="Path") 
+                        if (CursorEditor.GetComponent<CursorEditor>().PointClicked.tag=="Path"|| CursorEditor.GetComponent<CursorEditor>().PointClicked.tag == "MiddlePath") 
                         {
                             //Se o objeto carregado não for ESTE objeto
                             if (CursorEditor.GetComponent<CursorEditor>().PointClicked != transform.gameObject)
@@ -74,7 +77,7 @@ public class EditorWaypoint : MonoBehaviour
             if (Input.GetMouseButtonDown(1)) 
             {
                 //Se for um caminho
-                if (transform.tag == "Path")
+                if (transform.tag == "Path"|| transform.tag == "MiddlePath")
                 {
                     //Seta que o caminho não é um fim
                     GetComponent<WaypointChanger>().end = false;

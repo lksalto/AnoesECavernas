@@ -8,7 +8,7 @@ public class CameraMove : MonoBehaviour
     public float MoveSpeed,ZoomSpeed;
     public float currentx;
     public float currenty;
-    public bool following;
+    public bool following,inputable=true;
     public Vector3 velocity = Vector3.zero;
     private Camera cam;
     public float CamSize;
@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
     {
         transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentx, currenty, transform.position.z),ref velocity,CameraSpeed/* *Time.deltaTime */);
         cam.orthographicSize = CamSize;
-        InputsCamera();
+        if(inputable)InputsCamera();
     }
 
     public void MoveCamera(float x, float y) 

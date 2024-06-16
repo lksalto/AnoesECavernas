@@ -49,5 +49,9 @@ MonoBehaviour:
   - {fileID: 6672500826481072232, guid: 2da3292cb40d2194094af3fe531e7b69, type: 3}
   - {fileID: 6672500826481072232, guid: b68f445007719d14da1afefdf75a9ccd, type: 3}
   - {fileID: 6672500826481072232, guid: 6dd82e0c4b711a34cbf2a4e8a452676d, type: 3}
-  cooldDown: 1
-  qtt: 100
+  - {fileID: 6672500826481072232, guid: e0cae9dd56b476b4db538bb57a22d205, type: 3}
+  coolDown: 1
+  qtty: 0
+  initialQtt: 0
+  startTimer: 5
+  mult: 2

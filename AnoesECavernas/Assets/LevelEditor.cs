@@ -63,7 +63,6 @@ public class LevelEditor : MonoBehaviour
                 {
                     if (AllTiles[j].tiles[i].UseGameObject)
                     {
-                        Debug.Log("Gam");
                         Vector3 worldpos = AllTiles[j].tiles[i].TilemapUsado.CellToWorld(new Vector3Int(x, y, 0) - AllTiles[j].offsetTilezed)+ AllTiles[j].offset;
                         worldpos = new Vector3(worldpos.x, worldpos.y, 0);
                         Instantiate(AllTiles[j].tiles[i].gamObj, worldpos, Quaternion.identity, AllTiles[j].tiles[i].parent.transform);
@@ -80,6 +79,6 @@ public class LevelEditor : MonoBehaviour
     {
         GetComponent<DragTest>().enabled= true;
         DragFilter = filter;
-        filter.gameObject.SetActive(true);
+        filter.SetActive(true);
     }
 }
