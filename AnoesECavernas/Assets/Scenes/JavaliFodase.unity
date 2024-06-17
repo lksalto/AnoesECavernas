@@ -1642,6 +1642,7 @@ GameObject:
   - component: {fileID: 535822157}
   - component: {fileID: 535822156}
   - component: {fileID: 535822158}
+  - component: {fileID: 535822159}
   m_Layer: 0
   m_Name: GameManager - R
   m_TagString: GameManager
@@ -1700,6 +1701,27 @@ MonoBehaviour:
   - {fileID: 737755832}
   - {fileID: 1916628933}
   - {fileID: 1048764397}
+--- !u!114 &535822159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535822155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd9f2d2cf73108489363f7992944be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  javalis:
+  - {fileID: 6672500826619190360}
+  - {fileID: 614304763}
+  - {fileID: 2039415220}
+  - {fileID: 1993883105}
+  - {fileID: 1297984561}
+  - {fileID: 1340027684}
+  - {fileID: 593045949}
+  range: {x: 5, y: 10.54}
 --- !u!1 &544743472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2260,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 5
   speed: 4.5
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -2483,7 +2505,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 4.5
   speed: 5
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -3664,7 +3686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &849564486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37612,7 +37634,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 5.5
   speed: 4
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -37955,7 +37977,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 6
   speed: 7
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -40703,7 +40725,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 5
   speed: 4
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -41010,7 +41032,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 4.5
   speed: 2
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5
@@ -42304,7 +42326,7 @@ MonoBehaviour:
   magicResist: 2
   initialSpeed: 4
   speed: 4
-  dmg: 1
+  dmg: -1
   slowTimer: 0
   slowCounter: 0
   value: 5

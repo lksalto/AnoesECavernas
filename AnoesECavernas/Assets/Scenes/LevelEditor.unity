@@ -571,8 +571,8 @@ RectTransform:
   - {fileID: 180056861}
   - {fileID: 2051728927}
   - {fileID: 1867420529}
-  - {fileID: 583490410}
   - {fileID: 526290395}
+  - {fileID: 583490410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16152,6 +16152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526290395}
+  - component: {fileID: 526290397}
   m_Layer: 5
   m_Name: SpawnEdit
   m_TagString: EnemyEditor
@@ -16185,6 +16186,18 @@ RectTransform:
   m_AnchoredPosition: {x: 330, y: 54.49}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &526290397
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526290394}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &535822155
 GameObject:
   m_ObjectHideFlags: 0
