@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 public class Cursor : MonoBehaviour
 {
-    private Grid grid;
+    public Grid grid;
     public Tilemap caminho;
     public bool caminhoBool;
     public GameObject Sprit;
@@ -14,7 +14,7 @@ public class Cursor : MonoBehaviour
     public Vector3 offset;
     public Vector3Int offsetTilezed;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //seleciona o grid
         if(GameObject.FindGameObjectWithTag("Tile").activeInHierarchy) grid = GameObject.FindGameObjectWithTag("Tile").GetComponent<Grid>();

@@ -832,9 +832,9 @@ public class AstarPath : VersionedMonoBehaviour {
 			if (logPathResults == PathLog.InGame) {
 				inGameDebugPath = debug;
 			} else if (path.error) {
-				Debug.LogWarning(debug);
+				//raulDebug.LogWarning(debug);
 			} else {
-				Debug.Log(debug);
+				//raulDebug.Log(debug);
 			}
 		}
 	}
@@ -1781,7 +1781,7 @@ public class AstarPath : VersionedMonoBehaviour {
 		System.GC.Collect();
 
 		if (logPathResults != PathLog.None && logPathResults != PathLog.OnlyErrors) {
-			Debug.Log("Scanning - Process took "+(lastScanTime*1000).ToString("0")+" ms to complete");
+			//raulDebug.Log("Scanning - Process took "+(lastScanTime*1000).ToString("0")+" ms to complete");
 		}
 	}
 
