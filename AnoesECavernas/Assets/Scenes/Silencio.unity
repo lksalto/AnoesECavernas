@@ -3254,6 +3254,7 @@ GameObject:
   - component: {fileID: 543552595}
   - component: {fileID: 543552596}
   - component: {fileID: 543552597}
+  - component: {fileID: 543552598}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -3470,6 +3471,21 @@ MonoBehaviour:
   reached: 0
   InitalPos: {x: 0, y: 0, z: 0}
   LastPos: {x: 0, y: 0, z: 0}
+--- !u!114 &543552598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543552589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dc2e6b6a00a3841a21685e0db17ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trap: {fileID: 3035865929036466362, guid: a616aaf242630874796ce405d7723f8a, type: 3}
+  CursorTrap: {fileID: 776612493867681983, guid: e30769e5cec7ed347867e4279aad8da7, type: 3}
+  TrapPlaceable: 0
 --- !u!1 &547223706
 GameObject:
   m_ObjectHideFlags: 0
@@ -20810,7 +20826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1102413781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39034,7 +39050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1803006839
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,7 +47,7 @@ public class HeroManager : MonoBehaviour
                 heros[i].GetComponent<AiMove>().ReturnToLastPos();
             }
         }
-        if (Input.GetMouseButtonDown(3)) 
+        if (Input.GetMouseButtonDown(2)) 
         {
             for (int i = 0; i < heros.Length; i++)
             {
@@ -94,6 +94,16 @@ public class HeroManager : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+    public void FazEspecial() 
+    {
+        for(int i = 0; i < heros.Length; i++) 
+        {
+            if (heros[i].GetComponent<HeroTrap>() != null) 
+            {
+                heros[i].GetComponent<HeroTrap>().ButtonUI = true;
+            }
         }
     }
 }

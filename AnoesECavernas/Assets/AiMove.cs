@@ -13,7 +13,7 @@ public class AiMove : MonoBehaviour
     public bool selecionado,clicado,reached;
     public Vector3 InitalPos,LastPos;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         path = GetComponent<AIPath>();
         destination = GetComponent<AIDestinationSetter>();
