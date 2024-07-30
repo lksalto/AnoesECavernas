@@ -16,6 +16,8 @@ TagManager:
   - MiddlePath
   - EnemyEditor
   - HeroManager
+  - Undefined
+  - UpgradeMenu
   layers:
   - Default
   - TransparentFX
