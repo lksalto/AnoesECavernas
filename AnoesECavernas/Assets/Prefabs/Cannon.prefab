@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  sr: {fileID: 4836623428011217503}
   type: 2
   sprite: {fileID: 0}
   atkDmg: 1
@@ -177,6 +178,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   price: 30
+  upgradeMenuPrefab: {fileID: 9132882358819934317, guid: 2b0924270cb1940428eeb7e567b62b09, type: 3}
+  numOfClicks: 0
+  lvl: 1
 --- !u!61 &2528572856723873469
 BoxCollider2D:
   m_ObjectHideFlags: 0

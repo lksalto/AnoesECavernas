@@ -6,7 +6,7 @@ public class Barrack : MonoBehaviour
 {
  
     [SerializeField] GameObject target;
-
+    [SerializeField] SpriteRenderer sr;
     // 0 = barraca, 1 = magic, 2 = cannon
     [SerializeField] int type;
 
@@ -33,6 +33,11 @@ public class Barrack : MonoBehaviour
     int maxIndex;
     public int price = 5;
 
+    //upgrades
+    public GameObject upgradeMenuPrefab;
+    private GameObject upgradeMenuInstance;
+    public int numOfClicks = 0; //apenas para nao aparecer o menu qndo colocar a torre
+    public int lvl = 1;
     void Start()
     {
 
@@ -54,19 +59,21 @@ public class Barrack : MonoBehaviour
         if ((!atkClosestEnemy || atkClosestEnemy) && atkCd < 0 && atkSpeed > 0)
         {
             atkCd = 5 / atkSpeed;
-            GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity) ;
-           
+            GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             switch (type)
             {
                 case 0: 
                     bullet.GetComponent<Arrow>().target = tgt;
+                    bullet.GetComponent<Arrow>().dmg = atkDmg;
                     break;
                 case 1:
                     bullet.GetComponent<MagicMissile>().target = tgt;
+                    bullet.GetComponent<MagicMissile>().dmg = atkDmg;
                     break;
                 case 2:
                     bullet.transform.rotation = Quaternion.identity;
                     bullet.GetComponent<CannonBall>().target = tgt;
+                    bullet.GetComponent<CannonBall>().dmg = atkDmg;
                     break;
             }
             
@@ -146,4 +153,32 @@ public class Barrack : MonoBehaviour
         return maxIndex;
     }
 
+    public void CloseUpgradeMenu()
+    {
+        if (upgradeMenuInstance != null)
+        {
+            Destroy(upgradeMenuInstance);
+        }
+    }
+    public void UpLevel()
+    {
+        if(lvl < 3)
+        {
+            lvl++;
+            price *= 5;
+            atkSpeed = atkSpeed * lvl;
+            atkDmg = atkDmg * lvl;
+            
+            Color clr = sr.color;
+            clr.g -= 0.25f;
+            clr.b -= 0.25f;
+            sr.color = clr;
+
+        }
+
+    }
+    public int getLevel()
+    {
+        return lvl;
+    }
 }
