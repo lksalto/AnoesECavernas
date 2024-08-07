@@ -3037,9 +3037,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 0
   AtkRadius: 0
+  AtkDuration: 0
   AtkCoolDown: 0
   Timer: 0
-  enemys: []
+  button: 0
+  Struenemies: []
+  auxStr: []
 --- !u!114 &353226149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,9 +3717,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 0
   AtkRadius: 0
+  AtkDuration: 0
   AtkCoolDown: 0
   Timer: 0
-  enemys: []
+  button: 0
+  Struenemies: []
+  auxStr: []
 --- !u!114 &481514211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4446,6 +4452,7 @@ GameObject:
   - component: {fileID: 543552597}
   - component: {fileID: 543552598}
   - component: {fileID: 543552599}
+  - component: {fileID: 543552600}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -4565,7 +4572,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e33fc8b0e6b5d448a194dff51cedf04, type: 3}
-  m_Color: {r: 0.59947217, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.09759998, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4690,11 +4697,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25b8e8d2c5513b429871f941d452b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dmg: 84
-  AtkRadius: 1.85
+  Dmg: 1
+  AtkRadius: 2.66
+  AtkDuration: 0
   AtkCoolDown: 3.02
   Timer: 0
-  enemys: []
+  button: 0
+  Struenemies: []
+  auxStr: []
+--- !u!114 &543552600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543552589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a09caa29960c24db96fe9393adaccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dmg: 1
+  dmgntime: 0
+  AtkRadius: 1.85
+  AtkDuration: 0
+  AtkCoolDown: 3.02
+  Timer: 0
+  Struenemies: []
+  auxStr: []
 --- !u!1 &547223706
 GameObject:
   m_ObjectHideFlags: 0
@@ -26285,9 +26315,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 0
   AtkRadius: 0
+  AtkDuration: 0
   AtkCoolDown: 0
   Timer: 0
-  enemys: []
+  button: 0
+  Struenemies: []
+  auxStr: []
 --- !u!114 &1570980009
 MonoBehaviour:
   m_ObjectHideFlags: 0
