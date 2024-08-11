@@ -1557,6 +1557,7 @@ MonoBehaviour:
   NewColor: {r: 0, g: 0, b: 0, a: 0}
   offset: {x: 0, y: 0, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &210191158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,7 +4460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &543552591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20213,6 +20214,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &715421170
 GameObject:
   m_ObjectHideFlags: 0
@@ -21514,6 +21516,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &864275515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22188,14 +22191,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 0}
+  grid: {fileID: 1233944048}
   caminho: {fileID: 1676811713}
   caminhoBool: 0
   Sprit: {fileID: 1024644901}
-  TamanhoTilezed: {x: 1, y: 1}
+  TamanhoTilezed: {x: 3, y: 3}
   NewColor: {r: 1, g: 0.11425171, b: 0, a: 1}
   offset: {x: 0.15, y: 0.15, z: 0}
-  offsetTilezed: {x: 0, y: 0, z: 0}
+  offsetTilezed: {x: 1, y: 1, z: 0}
+  Gizmo: {r: 1, g: 0.8307334, b: 0, a: 0.11372549}
 --- !u!4 &1024644904
 Transform:
   m_ObjectHideFlags: 0
@@ -22926,6 +22930,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1102413780
 GameObject:
   m_ObjectHideFlags: 0
@@ -24297,6 +24302,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1220362399
 GameObject:
   m_ObjectHideFlags: 0
@@ -26034,6 +26040,7 @@ MonoBehaviour:
   NewColor: {r: 0, g: 0, b: 0, a: 1}
   offset: {x: 0.15, y: 0.15, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1545928940
 Transform:
   m_ObjectHideFlags: 0
@@ -52414,6 +52421,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2088230674
 GameObject:
   m_ObjectHideFlags: 0
@@ -52923,6 +52931,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8511955825352727037
 MonoBehaviour:
   m_ObjectHideFlags: 0

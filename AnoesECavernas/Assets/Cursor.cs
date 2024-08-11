@@ -13,6 +13,22 @@ public class Cursor : MonoBehaviour
     public Color NewColor;
     public Vector3 offset;
     public Vector3Int offsetTilezed;
+    public Color Gizmo;
+
+    private void OnDrawGizmos()
+    {
+        //seleciona o grid
+        if (GameObject.FindGameObjectWithTag("Tile").activeInHierarchy) grid = GameObject.FindGameObjectWithTag("Tile").GetComponent<Grid>();
+        else { grid = null; Debug.Log("Usando o tilemap errado"); }
+
+        Gizmos.color = Gizmo;
+        Vector3 Size = new Vector3(TamanhoTilezed.x *grid.cellSize.x, TamanhoTilezed.y*grid.cellSize.y, 0);
+        Vector3 Posi= new Vector3(transform.position.x + (offset.x*(TamanhoTilezed.x-1)) - (offsetTilezed.x * grid.cellSize.x)
+                                , transform.position.y + (offset.y*(TamanhoTilezed.y-1)) - (offsetTilezed.y * grid.cellSize.y)
+                                , transform.position.z);
+        Gizmos.DrawCube(Posi, Size);
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
