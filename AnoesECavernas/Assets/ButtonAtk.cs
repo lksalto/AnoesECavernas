@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class test : MonoBehaviour
+public class ButtonAtk : MonoBehaviour
 {
     //public float timescale=1;
     public float Dmg;
@@ -24,42 +24,41 @@ public class test : MonoBehaviour
         public GameObject enemy;
         public bool dmgTook;
     }
-    /*//
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position,AtkRadius);
-    }//*/
+        Gizmos.DrawWireSphere(transform.position, AtkRadius);
+    }
     private void Update()
     {
         //Time.timeScale = timescale;
 
         if (button) { Timer += Time.deltaTime; }
-        if (Timer > AtkCoolDown) 
+        if (Timer > AtkCoolDown)
         {
             Timer = 0f;
             button = false;
         }
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        auxStr=new EnemyMang[enemys.Length];
-        for(int i = 0; i < auxStr.Length; i++) 
+        auxStr = new EnemyMang[enemys.Length];
+        for (int i = 0; i < auxStr.Length; i++)
         {
-            auxStr[i].enemy=enemys[i];
+            auxStr[i].enemy = enemys[i];
         }
-        Struenemies=StructCopyTo(auxStr,Struenemies);
+        Struenemies = StructCopyTo(auxStr, Struenemies);
 
         //dmgntime = DmgOnButton(Dmg,button);
-        for (int i = 0; i < Struenemies.Length; i++) 
+        for (int i = 0; i < Struenemies.Length; i++)
         {
 
-            if (OnRadiusOf(Struenemies[i].enemy.transform, AtkRadius)) 
+            if (OnRadiusOf(Struenemies[i].enemy.transform, AtkRadius))
             {
-                if (DmgOnButton(Dmg, button) != 0f) 
+                if (DmgOnButton(Dmg, button) != 0f)
                 {
                     if (!Struenemies[i].dmgTook) { Struenemies[i].enemy.GetComponent<EnemyLife>().TakeHit(DmgOnButton(Dmg, button), 0); }
                     Struenemies[i].dmgTook = true;
                 }
-                else 
+                else
                 {
                     Struenemies[i].dmgTook = false;
                 }
@@ -70,14 +69,14 @@ public class test : MonoBehaviour
     {
         button = true;
     }
-    private float DmgOnButton(float dmg,bool button) 
+    private float DmgOnButton(float dmg, bool button)
     {
         float Cooldmg;
-        if (!button) 
+        if (!button)
         {
             Cooldmg = 0f;
         }
-        else 
+        else
         {
             Cooldmg = dmg;
         }
@@ -94,17 +93,17 @@ public class test : MonoBehaviour
             return false;
         }
     }
-    private EnemyMang[] StructCopyTo(EnemyMang[] Source,EnemyMang[] Destination)
+    private EnemyMang[] StructCopyTo(EnemyMang[] Source, EnemyMang[] Destination)
     {
         //Debug.Log("entrou1");
         EnemyMang[] Aux = new EnemyMang[Source.Length];
         if (Destination.Length > Source.Length)
         {
             Debug.Log("entrou>");
-            int indexAdd=0;
-            for(int i = 0; i < Source.Length; i++) 
+            int indexAdd = 0;
+            for (int i = 0; i < Source.Length; i++)
             {
-                if(Destination[i+ indexAdd].enemy != Source[i].enemy) 
+                if (Destination[i + indexAdd].enemy != Source[i].enemy)
                 {
                     indexAdd++;
                 }
@@ -120,7 +119,7 @@ public class test : MonoBehaviour
         {
             Debug.Log("entrou<");
             Destination.CopyTo(Aux, 0);
-            for(int i = 0; i < Source.Length; i++) 
+            for (int i = 0; i < Source.Length; i++)
             {
                 Aux[i].enemy = Source[i].enemy;
             }
