@@ -962,7 +962,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 1222449203, guid: d48b90daa84923b40a7f4d6ec8a71f14, type: 3}
+    m_Data: {fileID: -1767877194, guid: 0f355d3960c0739428058e5a75e2bdbb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -1055,7 +1055,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.055555582, y: 0.055555582, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -2360,7 +2360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330243035
 Transform:
   m_ObjectHideFlags: 0
@@ -2473,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &366325123
 Transform:
   m_ObjectHideFlags: 0
@@ -2531,7 +2531,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.055555582, y: 0.055555582, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -15463,7 +15463,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 1222449203, guid: d48b90daa84923b40a7f4d6ec8a71f14, type: 3}
+    m_Data: {fileID: -1767877194, guid: 0f355d3960c0739428058e5a75e2bdbb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1288
     m_Data:
@@ -15767,6 +15767,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25b8e8d2c5513b429871f941d452b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dmg: 0
+  AtkRadius: 0
+  AtkDuration: 0
+  AtkCoolDown: 0
+  Timer: 0
+  button: 0
+  Struenemies: []
+  auxStr: []
 --- !u!114 &481514211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33609,6 +33617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
   caminho: {fileID: 1676811713}
   caminhoBool: 0
   Sprit: {fileID: 581437942}
@@ -33616,6 +33625,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1103724919
 GameObject:
   m_ObjectHideFlags: 0
@@ -34536,6 +34546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
   caminho: {fileID: 1676811713}
   caminhoBool: 0
   Sprit: {fileID: 1832402191}
@@ -34543,6 +34554,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1228163813
 GameObject:
   m_ObjectHideFlags: 0
@@ -35792,7 +35804,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 1222449203, guid: d48b90daa84923b40a7f4d6ec8a71f14, type: 3}
+    m_Data: {fileID: -1767877194, guid: 0f355d3960c0739428058e5a75e2bdbb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -35997,7 +36009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllTiles:
   - Name: Test
-    map: {fileID: 2800000, guid: 197cd553aa4aaee428add4d51765daf1, type: 3}
+    map: {fileID: 2800000, guid: 4e15b745ea47ef749bb50a0f2ce09384, type: 3}
     offsetTilezed: {x: 60, y: 40, z: 0}
     offset: {x: 0.15, y: 0.15, z: 0}
     tiles:
@@ -36227,6 +36239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
   caminho: {fileID: 1676811713}
   caminhoBool: 0
   Sprit: {fileID: 1545928937}
@@ -36234,6 +36247,7 @@ MonoBehaviour:
   NewColor: {r: 0, g: 0, b: 0, a: 1}
   offset: {x: 0.15, y: 0.15, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1545928940
 Transform:
   m_ObjectHideFlags: 0
@@ -37283,7 +37297,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.055555582, y: 0.055555582, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -37345,7 +37359,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 1222449203, guid: d48b90daa84923b40a7f4d6ec8a71f14, type: 3}
+    m_Data: {fileID: -1767877194, guid: 0f355d3960c0739428058e5a75e2bdbb, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -38139,6 +38153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25b8e8d2c5513b429871f941d452b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dmg: 0
+  AtkRadius: 0
+  AtkDuration: 0
+  AtkCoolDown: 0
+  Timer: 0
+  button: 0
+  Struenemies: []
+  auxStr: []
 --- !u!114 &1867420531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38276,6 +38298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 1233944048}
   caminho: {fileID: 116268344}
   caminhoBool: 0
   Sprit: {fileID: 1869340816}
@@ -38283,6 +38306,7 @@ MonoBehaviour:
   NewColor: {r: 0, g: 0, b: 0, a: 1}
   offset: {x: 0.15, y: 0.15, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1869340819
 Transform:
   m_ObjectHideFlags: 0
@@ -43277,6 +43301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730558c396c805b4cb74c421ab15b43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
   caminho: {fileID: 1676811713}
   caminhoBool: 0
   Sprit: {fileID: 7154140345004997223}
@@ -43284,6 +43309,7 @@ MonoBehaviour:
   NewColor: {r: 1, g: 0, b: 0, a: 0.6039216}
   offset: {x: 0.62, y: 1, z: 0}
   offsetTilezed: {x: 0, y: 0, z: 0}
+  Gizmo: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8511955825352727037
 MonoBehaviour:
   m_ObjectHideFlags: 0

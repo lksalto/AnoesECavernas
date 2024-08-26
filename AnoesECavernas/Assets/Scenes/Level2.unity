@@ -4748,7 +4748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  dt: 0.01
+  dt: 10
 --- !u!1 &547223706
 GameObject:
   m_ObjectHideFlags: 0
@@ -44587,7 +44587,6 @@ GameObject:
   - component: {fileID: 2014919845}
   - component: {fileID: 2014919844}
   - component: {fileID: 2014919843}
-  - component: {fileID: 2014919848}
   m_Layer: 6
   m_Name: Borda
   m_TagString: Untagged
@@ -52439,25 +52438,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &2014919848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014919840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 903312f8d047a2c49a01681454860fc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HorizontalPoints: {x: 0, y: 0}
-  VerticalPoints: {x: 0, y: 0}
-  CurrentTile: {x: 0, y: 0, z: 0}
-  tile: {fileID: 0}
-  tilemap: {fileID: 0}
-  Border: {fileID: 0}
-  BorderThick: 1
 --- !u!1 &2038706796
 GameObject:
   m_ObjectHideFlags: 0

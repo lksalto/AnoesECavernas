@@ -12,6 +12,7 @@ public class PassiveAtk : MonoBehaviour
     public float AtkDuration;
     public float AtkCoolDown;
     public float Timer;
+    public Animator animator;
     private GameObject[] enemys;
     [HideInInspector]
     public EnemyMang[] Struenemies, auxStr;
@@ -53,11 +54,17 @@ public class PassiveAtk : MonoBehaviour
                 {
                     if (!Struenemies[i].dmgTook) { Struenemies[i].enemy.GetComponent<EnemyLife>().TakeHit(DmgNTime(Dmg), 0); }
                     Struenemies[i].dmgTook = true;
+                    animator.SetBool("Passive",true);
                 }
                 else
                 {
                     Struenemies[i].dmgTook = false;
+                    animator.SetBool("Passive", false);
                 }
+            }
+            else
+            {
+                animator.SetBool("Passive", false);
             }
         }
     }

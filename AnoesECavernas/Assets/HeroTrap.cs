@@ -10,6 +10,7 @@ public class HeroTrap : MonoBehaviour
     private AiMove aimove;
     private GameObject cursor,InstantCursorTrap;
     private GameObject HeroManager;
+    public GameObject HeroButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,13 @@ public class HeroTrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int notTheHeroCount = 0;
         for(int i = 0; i < HeroManager.GetComponent<HeroManager>().heros.Length; i++) 
         {
+            Debug.Log("1");
             if(HeroManager.GetComponent<HeroManager>().heros[i] == transform.gameObject) 
             {
+                HeroButton.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.L)||ButtonUI) 
                 {
                     InstantCursorTrap = Instantiate(CursorTrap) as GameObject;
@@ -36,6 +40,15 @@ public class HeroTrap : MonoBehaviour
                 }
                 break;
             }
+            else 
+            {
+                Debug.Log("2");
+                notTheHeroCount++;
+            }
+        }
+        if (notTheHeroCount >= HeroManager.GetComponent<HeroManager>().heros.Length) 
+        {
+            HeroButton.SetActive(false);
         }
         if (TrapPlaceable)
         {
