@@ -77,7 +77,7 @@ public class TowerPlacement : MonoBehaviour
         // Iterate through the overlapping colliders and check their tags
         foreach (Collider2D col in results)
         {
-            if (col.CompareTag(tag) || cursor.caminhoBool)
+            if (col.CompareTag(tag) || caminho)//cursor.caminhoBool)
             {
                 sr.color = Color.red;
                 return true; // Overlapping with a collider having the specified tag

@@ -94,11 +94,11 @@ public class PassiveAtk : MonoBehaviour
     }
     private EnemyMang[] StructCopyTo(EnemyMang[] Source, EnemyMang[] Destination)
     {
-        Debug.Log("entrou1");
+        //Debug.Log("entrou1");
         EnemyMang[] Aux = new EnemyMang[Source.Length];
         if (Destination.Length > Source.Length)
         {
-            Debug.Log("entrou>");
+            //Debug.Log("entrou>");
             int indexAdd = 0;
             for (int i = 0; i < Source.Length; i++)
             {
@@ -116,7 +116,7 @@ public class PassiveAtk : MonoBehaviour
         }
         else if (Destination.Length < Source.Length)
         {
-            Debug.Log("entrou<");
+            //Debug.Log("entrou<");
             Destination.CopyTo(Aux, 0);
             for (int i = 0; i < Source.Length; i++)
             {

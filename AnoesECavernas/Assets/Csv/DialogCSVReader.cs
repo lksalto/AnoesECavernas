@@ -65,7 +65,8 @@ public class DialogCSVReader : MonoBehaviour
                     //muda o texto
                     Instanciado.GetComponent<TextMeshProUGUI>().text = Texto;
                     //pega a imagem a partir do path
-                    Texture2D sprite = (Texture2D)AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D));
+                    //tava dando erro//Texture2D sprite = (Texture2D)AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D));
+                    Texture2D sprite=Instanciado.GetComponent<Texture2D>();//inventei isso aqui só pra n dar problema, é uma cagada sem igual
                     //muda a imagem(e transforma Texture@d em sprite
                     Instanciado.transform.GetChild(0).GetComponent<Image>().sprite = ToSprite(sprite);
                 }
