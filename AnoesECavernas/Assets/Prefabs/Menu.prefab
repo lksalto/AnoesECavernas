@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 2223485899629172077}
   - component: {fileID: 7827013731488529064}
   - component: {fileID: 4080749318703187558}
+  - component: {fileID: 4660407292748493949}
   m_Layer: 5
   m_Name: Fundo (1)
   m_TagString: Untagged
@@ -903,7 +904,7 @@ MonoBehaviour:
   m_Color: {r: 0.5849056, g: 0.24750704, b: 0.09104664, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -917,6 +918,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4660407292748493949
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4760470489186490527}
+  m_Enabled: 0
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &5218977358994235786
 GameObject:
   m_ObjectHideFlags: 0
