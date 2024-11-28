@@ -10,7 +10,7 @@ public class Arrow : MonoBehaviour
     public float dmg;
     public GameObject target;
     public float speed;
-
+    public GameObject soundManager;
 
     // Update is called once per frame
     void Update()
@@ -47,7 +47,7 @@ public class Arrow : MonoBehaviour
 
                 }
             }
-
+            FindObjectOfType<SoundManager>().Play("Arrow");
             Destroy(gameObject);
 
         }

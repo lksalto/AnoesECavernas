@@ -90,6 +90,7 @@ public class CannonBall : MonoBehaviour
         }
         GameObject exp = Instantiate(particleExp, transform.position, Quaternion.identity);
         exp.transform.parent = null;
+        FindObjectOfType<SoundManager>().Play("Cannon");
         Destroy(exp, 1f);
         Destroy(indicator,0.03f);
         Destroy(gameObject);
