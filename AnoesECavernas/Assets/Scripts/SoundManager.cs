@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> arrowSounds = new List<AudioClip>();
     public List<AudioClip> cannonSounds = new List<AudioClip>();
     public List<AudioClip> iceSounds = new List<AudioClip>();
-
+    public List<AudioClip> playerDamage = new List<AudioClip>();
     private AudioSource audioSource;
 
     private void Start()
@@ -38,6 +38,10 @@ public class SoundManager : MonoBehaviour
         else if (sound == "Ice" && iceSounds.Count > 0)
         {
             clip = iceSounds[Random.Range(0, iceSounds.Count)];
+        }
+        else if (sound == "PlayerDamage" && playerDamage.Count > 0)
+        {
+            clip = playerDamage[Random.Range(0, iceSounds.Count)];
         }
 
         // Play the selected sound
