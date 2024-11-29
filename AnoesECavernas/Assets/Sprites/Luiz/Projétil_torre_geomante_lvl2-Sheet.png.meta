@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -95,7 +95,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579f0c87c55e3e44594d7a2e109193d0
+      internalID: 1549849517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6f18c2ce487cf4bb711e0b2ef21752
+      internalID: 1186081021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acec3febaa613e94986c8129bb83c40c
+      internalID: 210656886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f60de0333b7854e9f72a127ee92b95
+      internalID: 330691001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1e0ee4f739df1408f1d6b90fb1ee3d
+      internalID: -1690443971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Proj\xE9til_torre_geomante_lvl2-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d5dc4538333654eb558599599d8693
+      internalID: -1597516678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +232,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_0": 1549849517
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_1": 1186081021
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_2": 210656886
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_3": 330691001
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_4": -1690443971
+      "Proj\xE9til_torre_geomante_lvl2-Sheet_5": -1597516678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
