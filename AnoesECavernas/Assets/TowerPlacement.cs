@@ -19,6 +19,7 @@ public class TowerPlacement : MonoBehaviour
     {
         GameObject range = Instantiate(rangePrefab, transform.position, Quaternion.identity, gameObject.transform);
         range.transform.localScale = 2 * range.transform.localScale * Tower.GetComponent<Barrack>().atkRange;
+        sr.sprite = Tower.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite;
     }
     // Update is called once per frame
     void Update()

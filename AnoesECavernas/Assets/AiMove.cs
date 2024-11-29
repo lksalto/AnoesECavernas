@@ -12,6 +12,8 @@ public class AiMove : MonoBehaviour
     public float CursorRadius,DestinationRadius;
     public bool selecionado,clicado,reached;
     public Vector3 InitalPos,LastPos;
+    public GameObject ShadowSelected;
+    private Color shadowcolor;
     // Start is called before the first frame update
     void Awake()
     {
@@ -20,6 +22,7 @@ public class AiMove : MonoBehaviour
         cursor = GameObject.FindGameObjectWithTag("Cursor");
         HeroManager = GameObject.FindGameObjectWithTag("HeroManager");
         InitalPos = transform.position;
+        ShadowSelected = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -27,8 +30,12 @@ public class AiMove : MonoBehaviour
     {
         path.maxSpeed = Speed;
 
+        
+        ShadowSelected.GetComponent<SpriteRenderer>().color= shadowcolor;
+
         if (OnRadiusOf(cursor.transform, CursorRadius))
         {
+            shadowcolor = Color.red;
             if (Input.GetMouseButtonDown(0))
             {
                 //selecionado = true;
@@ -56,6 +63,7 @@ public class AiMove : MonoBehaviour
         }
         else if (selecionado) 
         {
+            shadowcolor = Color.green;
             if (Input.GetMouseButtonDown(0) && cursor.GetComponent<Cursor>().caminhoBool)
             {
                 clickedPos.transform.position=cursor.transform.position ;
@@ -64,6 +72,10 @@ public class AiMove : MonoBehaviour
                 path.enabled = true;
                 destination.target=clickedPos.transform;
             }
+        }
+        else 
+        {
+            shadowcolor = new Color(0.1603774f, 0.1603774f, 0.1603774f);
         }
         if (clickedPos!=null && OnRadiusOf(clickedPos.transform, DestinationRadius)) 
         {

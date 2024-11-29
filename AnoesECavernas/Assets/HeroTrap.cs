@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class HeroTrap : MonoBehaviour
 {
     public GameObject Trap;
     public GameObject CursorTrap;
+    public Tilemap TrapCaminho;
     public bool TrapPlaceable,ButtonUI;
     private AiMove aimove;
     private GameObject cursor,InstantCursorTrap;
@@ -58,6 +60,7 @@ public class HeroTrap : MonoBehaviour
                     InstantCursorTrap = Instantiate(CursorTrap) as GameObject;
                     InstantCursorTrap.transform.SetParent(cursor.transform);
                     InstantCursorTrap.transform.position = cursor.transform.position;
+                    InstantCursorTrap.GetComponent<Cursor>().caminho = TrapCaminho;
 
                     aimove.enabled = false;
                     TrapPlaceable = true;

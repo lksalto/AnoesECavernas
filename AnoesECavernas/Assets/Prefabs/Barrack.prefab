@@ -80,9 +80,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  sr: {fileID: 4836623428011217503}
+  sr: {fileID: 6680573880808263104}
   type: 0
   sprite: {fileID: 0}
+  UpgradeSprites:
+  - {fileID: 21300000, guid: 9abe7c4064c7f0c498dc78c1b768bc2b, type: 3}
   atkDmg: 1
   atkSpeed: 7
   atkCd: 0
@@ -274,7 +276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9abe7c4064c7f0c498dc78c1b768bc2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4d32fdca9b9b5a4cb7ba470ae784747, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

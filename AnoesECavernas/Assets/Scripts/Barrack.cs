@@ -11,6 +11,7 @@ public class Barrack : MonoBehaviour
     [SerializeField] int type;
 
     public Sprite sprite;
+    public Sprite[] UpgradeSprites;
     public int atkDmg;
     public float atkSpeed;
     public float atkCd;
@@ -168,11 +169,20 @@ public class Barrack : MonoBehaviour
             price *= 5;
             atkSpeed = atkSpeed * lvl;
             atkDmg = atkDmg * lvl;
-            
-            Color clr = sr.color;
-            clr.g -= 0.25f;
-            clr.b -= 0.25f;
-            sr.color = clr;
+
+            int LvlIndex = lvl - 2;
+            if (UpgradeSprites.Length > LvlIndex) 
+            { 
+                sr.sprite = UpgradeSprites[LvlIndex]; 
+            }
+            else
+            {
+
+                Color clr = sr.color;
+                clr.g -= 0.25f;
+                clr.b -= 0.25f;
+                sr.color = clr;
+            }
 
         }
 
