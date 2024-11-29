@@ -45,6 +45,7 @@ public class PassiveAtk : MonoBehaviour
         Struenemies = StructCopyTo(auxStr, Struenemies);
 
         dmgntime = DmgNTime(Dmg);
+        int NotInRangeEnemys = 0;
         for (int i = 0; i < Struenemies.Length; i++)
         {
 
@@ -59,13 +60,17 @@ public class PassiveAtk : MonoBehaviour
                 else
                 {
                     Struenemies[i].dmgTook = false;
-                    animator.SetBool("Passive", false);
+                    //animator.SetBool("Passive", false);
                 }
             }
             else
             {
-                animator.SetBool("Passive", false);
+                NotInRangeEnemys++;
             }
+        }
+        if(NotInRangeEnemys>= Struenemies.Length) 
+        {
+            animator.SetBool("Passive", false);
         }
     }
     private float DmgNTime(float dmg)

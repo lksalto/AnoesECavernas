@@ -16,6 +16,10 @@ public class Dialog : MonoBehaviour
     //quantidade de dialogos diferentes(já considerando os subdialogos)
     private int dialogcount;
 
+    private float timsca;
+    private bool paused;
+    public bool StartScenePaused;
+
     //O struct dos dialogos
     [System.Serializable]
     public struct Dialogs
@@ -125,17 +129,20 @@ public class Dialog : MonoBehaviour
                 AllDialogs[dialogtracker].gameObj[subdialogtracker] = AllDialogsAux[i];
             }
         }
+        if (StartScenePaused) { DialogStart(TestDialogId); }
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        //if (!paused) { timsca = Time.timeScale; }
         if (Input.GetKeyDown(KeyCode.E)) {DialogStart(TestDialogId);}
         //if (Input.GetKeyDown(KeyCode.Alpha1)) { TestDialogId = 0; }
         //if (Input.GetKeyDown(KeyCode.Alpha2)) { TestDialogId = 1; }
         //if (Input.GetKeyDown(KeyCode.Alpha3)) { TestDialogId = 2; }
         if (Input.GetKeyDown(KeyCode.Space)) { DialogEnd(Conversa); }
+        if ((!transform.GetChild(0).gameObject.activeInHierarchy)&&paused) { Time.timeScale = 1; paused = false; }
     }
     public int DialogIdByName(string name) 
     {
@@ -153,6 +160,8 @@ public class Dialog : MonoBehaviour
     }
     public void DialogStart(int DialogId) 
     {
+        Time.timeScale = 0;
+        paused = true;
         if (Conversa == -1)
         {
             transform.GetChild(0).gameObject.SetActive(true);
