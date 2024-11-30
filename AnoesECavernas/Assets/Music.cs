@@ -6,6 +6,10 @@ public class Music : MonoBehaviour
 {
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
+    }
+    private void Update()
+    {
+        
     }
 }
