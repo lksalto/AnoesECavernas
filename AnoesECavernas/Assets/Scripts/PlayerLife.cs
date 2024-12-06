@@ -26,7 +26,7 @@ public class PlayerLife : MonoBehaviour
         {
             LoseGame();
         }
-        FindObjectOfType<SoundManager>().Play("PlayerDamage");
+        if(FindObjectOfType<SoundManager>()!=null) FindObjectOfType<SoundManager>().Play("PlayerDamage");
         //atualizar texto
         lifeText.text = life.ToString();
     }

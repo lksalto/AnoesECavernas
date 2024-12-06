@@ -43,6 +43,7 @@ public class EditorEnemy : MonoBehaviour
         idaux = id;
         GetStats(enemys[id].GetComponent<EnemyLife>());
         InputFieldSetInitial();
+        EnemyEditor.SetActive(false);
 
     }
 
