@@ -36,7 +36,8 @@ public class EnemyLife : MonoBehaviour
     Animator anim;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        if (GetComponent<Animator>() != null) { anim = GetComponent<Animator>(); }
+        else { anim = GetComponentInChildren<Animator>(); }
         playerResources = FindObjectOfType<PlayerResources>();
         maxLife = life;
         originalMaterial = spriteRenderer.material;
@@ -117,13 +118,14 @@ public class EnemyLife : MonoBehaviour
     {
         isRooted = true;
         speed = 0;
+        Color color = spriteRenderer.color;
         spriteRenderer.color = new Color(0.678f, 0.847f, 1.0f, 1.0f);
         anim.speed = 0;
         yield return new WaitForSeconds(s);
         isRooted = false;
         anim.speed = 1;
         speed = initialSpeed;
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = color;
     }
 
     public void Slow(float qtt)

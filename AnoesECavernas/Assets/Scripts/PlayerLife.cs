@@ -39,6 +39,7 @@ public class PlayerLife : MonoBehaviour
     {
         //no momento restarta a cena, mas iremos mudar para mostrar o game over
         EndGame(false);
+        Time.timeScale = 0;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

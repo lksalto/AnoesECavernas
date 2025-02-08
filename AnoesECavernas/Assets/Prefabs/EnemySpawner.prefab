@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPrefabs:
-  - {fileID: 6672500826481072232, guid: 3a09fb690e615ab4abed0151b6dbfc4b, type: 3}
-  - {fileID: 6672500826481072232, guid: 2da3292cb40d2194094af3fe531e7b69, type: 3}
-  - {fileID: 6672500826481072232, guid: b68f445007719d14da1afefdf75a9ccd, type: 3}
-  - {fileID: 6672500826481072232, guid: 6dd82e0c4b711a34cbf2a4e8a452676d, type: 3}
-  - {fileID: 6672500826481072232, guid: e0cae9dd56b476b4db538bb57a22d205, type: 3}
+  - {fileID: 6672500826481072232, guid: 71789fb29f0426d4b92e5960e372575e, type: 3}
+  - {fileID: 6672500826481072232, guid: bbd76cdeada63654596438a9c10b99a0, type: 3}
+  - {fileID: 6672500826481072232, guid: a61617f30b7a8d34b975cd6ff5d891a6, type: 3}
+  - {fileID: 6672500826481072232, guid: 3424949234531e4479c1e5fb40b4f312, type: 3}
+  - {fileID: 6672500826481072232, guid: 3d79eaf80b103134c943c0ae8d85b945, type: 3}
+  - {fileID: 6672500826481072232, guid: 3d79eaf80b103134c943c0ae8d85b945, type: 3}
   coolDown: 1
   qtty: 0
   initialQtt: 0

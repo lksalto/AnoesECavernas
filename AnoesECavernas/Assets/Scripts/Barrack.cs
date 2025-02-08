@@ -167,8 +167,8 @@ public class Barrack : MonoBehaviour
         {
             lvl++;
             price *= 5;
-            atkSpeed = atkSpeed * lvl;
-            atkDmg = atkDmg * lvl;
+            atkSpeed = atkSpeed + atkSpeed * lvl/3;
+            atkDmg = atkDmg + atkDmg * lvl/3;
 
             int LvlIndex = lvl - 2;
             if (UpgradeSprites.Length > LvlIndex) 
