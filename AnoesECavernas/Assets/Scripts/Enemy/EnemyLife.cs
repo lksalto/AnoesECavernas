@@ -156,7 +156,7 @@ public class EnemyLife : MonoBehaviour
     {
         EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
         EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
-        if (spawn !=null && obj!=null &&obj.Length == 1 && spawn.qtty <= 0)
+        if (spawn !=null && obj!=null &&obj.Length == 1 && spawn.end)
         {
             FindObjectOfType<PlayerLife>().EndGame(true);
         }

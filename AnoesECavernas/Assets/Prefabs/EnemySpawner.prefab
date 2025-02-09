@@ -51,8 +51,18 @@ MonoBehaviour:
   - {fileID: 6672500826481072232, guid: 3424949234531e4479c1e5fb40b4f312, type: 3}
   - {fileID: 6672500826481072232, guid: 3d79eaf80b103134c943c0ae8d85b945, type: 3}
   - {fileID: 6672500826481072232, guid: 3d79eaf80b103134c943c0ae8d85b945, type: 3}
-  coolDown: 1
-  qtty: 0
-  initialQtt: 0
   startTimer: 5
-  mult: 2
+  end: 0
+  waves:
+  - EnemiesQts:
+    - enemyId: 0
+      enemyQt: 3
+    - enemyId: 1
+      enemyQt: 3
+    CoolDownBetweenEnemys: 1
+    SecsToNewWave: 0
+  - EnemiesQts:
+    - enemyId: 2
+      enemyQt: 1
+    CoolDownBetweenEnemys: 1
+    SecsToNewWave: 0

@@ -17,9 +17,9 @@ public class EnemyPathing : MonoBehaviour
     EnemyLife enemyLife;
 
 
-    [SerializeField] int pathIdx;
+    [SerializeField]public int pathIdx=-2;
     
-    void Awake()
+    void Start()
     {
         enemyLife = GetComponent<EnemyLife>();
         dmg = enemyLife.dmg;
@@ -28,8 +28,14 @@ public class EnemyPathing : MonoBehaviour
 
         //Busca todos os caminhos de inicio
         allPaths = GameObject.FindGameObjectsWithTag("Path");
+        //Debug.Log("Path" + pathIdx.ToString());
+
         //Escolhe qual caminho a seguir (aleatoriamente)
-        pathIdx = Random.Range(0, allPaths.Length); 
+        if (pathIdx == -1) { pathIdx = Random.Range(0, allPaths.Length); }
+        //Debug.Log("Rand" + pathIdx.ToString());
+
+
+
         //Criando o caminho
         foreach (Transform wp in allPaths[pathIdx].GetComponentInChildren<Transform>())
         {

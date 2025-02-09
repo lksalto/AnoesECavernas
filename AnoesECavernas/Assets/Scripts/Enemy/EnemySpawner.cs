@@ -6,92 +6,102 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> enemiesPrefabs;
-    public float coolDown = 1f;
-    public int qtty;
-    public int initialQtt;
     public float startTimer = 5;
-    public float mult = 2;
+    public bool end;
+////////////////////////////////////////////////////////////////////
+    public Waves[] waves;
+
+    [System.Serializable] 
+    public struct Waves
+    {
+        public EnemyQtt[] EnemiesQts;
+        public float CoolDownBetweenEnemys;
+        public float SecsToNewWave;
+    }
+    [System.Serializable]
+    public struct EnemyQtt
+    {
+        public int enemyId;
+        public int enemyQt;
+        public int pathId;
+        public bool RandomPath;
+    }
     void Start()
     {
-        initialQtt = qtty;
+        end= false;
         StartCoroutine(waitToStart(startTimer));
     }
 
     IEnumerator waitToStart(float sec)
     {
         yield return new WaitForSeconds(sec);
-        StartCoroutine(spawnEnemy(enemiesPrefabs, 0, qtty, coolDown));
+        StartCoroutine(spawnEnemy(enemiesPrefabs, waves));
     }
 
 //Spawnar "qtt" inimigos do tipo "enemyList[idx]", a cada "cd" 
-    IEnumerator spawnEnemy(List<GameObject> enemyList, int idx, int qtt,float cd)
+    IEnumerator spawnEnemy(List<GameObject> enemyList,Waves[] waves)
     {
-        qtty = qtt;
-        yield return new WaitForSeconds(cd);
-        GameObject enemy = Instantiate(enemyList[idx], transform.position, Quaternion.identity);
-        enemy.transform.parent = null;
-        //hard
-        if (qtt == initialQtt/4)
+        for(int i = 0; i < waves.Length; i++) 
         {
-            GameObject fran = Instantiate(enemyList[4], transform.position, Quaternion.identity);
-        }
-        if(qtt < initialQtt/4)
-        {
-            
-            cd = coolDown / mult;
-            if (Random.Range(0, 15) < 3)
+            int qts = 0;
+            int[] ids = new int[waves[i].EnemiesQts.Length];
+            int[] idsQt= new int[waves[i].EnemiesQts.Length];
+            int[] idsPath = new int[waves[i].EnemiesQts.Length];
+            for (int j=0; j < waves[i].EnemiesQts.Length; j++) 
             {
-                idx = 0;
+                qts += waves[i].EnemiesQts[j].enemyQt;
+                ids[j] = waves[i].EnemiesQts[j].enemyId;
+                idsQt[j] = waves[i].EnemiesQts[j].enemyQt;
+                if (!waves[i].EnemiesQts[j].RandomPath) { idsPath[j] = waves[i].EnemiesQts[j].pathId; }
+                else { idsPath[j] = -1; }
+                //Debug.Log("id:" + ids[j].ToString());
+                //Debug.Log("qt:" + idsQt[j].ToString());
             }
-            else if (Random.Range(0, 12) < 7)
+            for (int j=0; j < qts; j++) 
             {
-                idx = 1;
-            }
-            else if (Random.Range(0, 12) < 10)
-            {
-                idx = 2;
-            }
-            else
-            {
-                idx = 3;
+                int aux = Random.Range(0, ids.Length);
+                //Debug.Log("aux:"+aux.ToString());
+                //Debug.Log("idsQt[aux] antes:" + idsQt[aux].ToString());
+                if (idsQt[aux] > 0)
+                {
+                    idsQt[aux] -=1;
+                    //Debug.Log("idsQt[aux] depois:" + idsQt[aux].ToString());
+
+                    GameObject Enemy = Instantiate(enemyList[ids[aux]], transform.position, Quaternion.identity);
+                    Enemy.GetComponent<EnemyPathing>().pathIdx = idsPath[aux];
+                    //Debug.Log("Spawner" + idsPath[aux].ToString());
+                    Enemy.transform.parent = null;
+
+
+                    if (idsQt[aux] == 0)
+                    {
+                        Debug.Log("idsQt[aux] depois:");
+                        int[] auxid = new int[ids.Length-1];
+                        int[] auxidq = new int[idsQt.Length - 1];
+                        int[] auxidpath = new int[idsQt.Length - 1];
+                        int ki=0;
+                        for (int k=0; k<ids.Length; k++) 
+                        {
+                            if (idsQt[k] != 0) 
+                            {
+                                auxid[ki] = ids[k];
+                                auxidq[ki] = idsQt[k];
+                                auxidpath[ki] = idsPath[k];
+                                ki++;
+                            }
+                        }
+                        ids = auxid;
+                        idsQt = auxidq;
+                        idsPath = auxidpath;
+                    }
+
+                    yield return new WaitForSeconds(waves[i].CoolDownBetweenEnemys);
+                }
             }
 
-        }
-        //medium
-        else if(qtt < initialQtt/2)
-        {
-            
-            cd = coolDown / 2;
-            if (Random.Range(0, 12) < 5)
-            {
-                idx = 0;
-            }
-            else if(Random.Range(0, 12) < 10)
-            {
-                idx = 1;
-            }
-            else
-            {
-                idx = 2;
-            }
-        }
-        else //easy
-        {
-            
-            if (Random.Range(0, 10) < 5)
-            {
-                idx = 0;
-            }
-            else
-            {
-                idx = 1;
-            }
-        }
-        if(qtt>=0)
-        {
-            StartCoroutine(spawnEnemy(enemyList, idx, qtt - 1, cd));
-        }
 
-        
+            yield return new WaitForSeconds(waves[i].SecsToNewWave);
+        }
+        end = true;
     }
 }
