@@ -169,7 +169,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   UpgradeSprites:
   - {fileID: 21300000, guid: 7c5d34ff268c6834ab19194ee6b776a6, type: 3}
-  atkDmg: 1
+  atkDmg: 3
   atkSpeed: 2
   atkCd: 0
   atkClosestEnemy: 0

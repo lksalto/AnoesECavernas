@@ -485,13 +485,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 30
-  magicResist: 2
+  magicResist: 3
   initialSpeed: 4
   speed: 4
   dmg: 1
   slowTimer: 0
   slowCounter: 0
-  value: 5
+  value: 1
   bloodParticle: {fileID: 4977420918896418720, guid: b60c1bdcb926e2749a487849d9555961, type: 3}
   spriteRenderer: {fileID: 3669396957537996065}
   whiteFlashMaterial: {fileID: 2100000, guid: 4ddd0bcf2c71777409422bdc23a6822b, type: 2}

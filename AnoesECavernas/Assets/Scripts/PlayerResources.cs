@@ -45,6 +45,7 @@ public class PlayerResources : MonoBehaviour
         {
             towerButtons[2].GetComponent<Button>().onClick.Invoke();
         }
+        
     }
 
     public void PassiveIncome()
@@ -76,5 +77,6 @@ public class PlayerResources : MonoBehaviour
             
         }
     }
+    
 
 }

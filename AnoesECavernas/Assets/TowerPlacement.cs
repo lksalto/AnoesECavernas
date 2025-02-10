@@ -56,6 +56,7 @@ public class TowerPlacement : MonoBehaviour
 
             // Deduct the cost of the tower from the player's resources
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerResources>().AddResource(-tower.GetComponent<Barrack>().price);
+            tower.GetComponent<Barrack>().price += tower.GetComponent<Barrack>().price -10;
 
             // Deactivate the current game object (if necessary)
             transform.gameObject.SetActive(false);

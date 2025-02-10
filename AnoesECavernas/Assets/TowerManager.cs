@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerManager : MonoBehaviour
 {
@@ -17,14 +18,17 @@ public class TowerManager : MonoBehaviour
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 
-            if (hit.collider != null && (hit.collider.CompareTag("Tower")))
+            if (hit.collider != null && (hit.collider.CompareTag("Tower")) && !IsMouseOverUpgradeUI())
             {
-                if(countInstances == 1)
+
+                barrack = hit.collider.GetComponent<Barrack>();
+                if (countInstances == 1)
                 {
-                    Destroy(upgradeMenuInstance);
+                    if(upgradeMenuInstance!=null) Destroy(upgradeMenuInstance);
+                    //tempBar = null;
+
                 }
                 countInstances = 1;
-                barrack = hit.collider.GetComponent<Barrack>();
                 if (barrack != null)
                 {
                     Vector3 menuPosition = hit.collider.transform.position;
@@ -36,7 +40,7 @@ public class TowerManager : MonoBehaviour
             {
                 countInstances = 0;
                 Debug.Log("DELETA INSTANCIA");
-                Destroy(FindObjectOfType<UpgradeMenu>().gameObject,0.2f);
+                if (FindObjectOfType<UpgradeMenu>() != null) { Destroy(FindObjectOfType<UpgradeMenu>().gameObject, 0.2f); }
             }
             
         }
@@ -51,6 +55,17 @@ public class TowerManager : MonoBehaviour
         {
             Debug.Log("upou");
             barrack.UpLevel();
+        }
+    }
+    bool IsMouseOverUpgradeUI()
+    {
+        if (FindObjectOfType<UpgradeMenu>() != null)
+        {
+            return RectTransformUtility.RectangleContainsScreenPoint(FindObjectOfType<UpgradeMenu>().transform.GetChild(0).GetComponentInChildren<RectTransform>(), Input.mousePosition, null);
+        }
+        else 
+        {
+            return false;
         }
     }
 }

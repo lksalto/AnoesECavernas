@@ -80,7 +80,7 @@ MonoBehaviour:
   targetGround: {x: 0, y: 0, z: 0}
   dmg: 1
   target: {fileID: 0}
-  speed: 29
+  speed: 30
   soundManager: {fileID: 0}
 --- !u!1 &7796106286710999755
 GameObject:

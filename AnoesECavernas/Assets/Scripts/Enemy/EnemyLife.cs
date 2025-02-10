@@ -91,7 +91,7 @@ public class EnemyLife : MonoBehaviour
         playerResources.AddResource(value);
         GameObject blood = Instantiate(bloodParticle, transform.position, Quaternion.identity);
         blood.transform.parent = null;
-        CheckGameOver();
+        //CheckGameOver();
         Destroy(blood, 0.8f);
         Destroy(gameObject);
     }

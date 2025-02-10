@@ -33,6 +33,6 @@ public class CameraMove : MonoBehaviour
     public void InputsCamera() 
     {
         MoveCamera(currentx+ MoveSpeed*Time.deltaTime*Input.GetAxis("Horizontal"), currenty + MoveSpeed * Time.deltaTime * Input.GetAxis("Vertical"));
-        CamSize += ZoomSpeed * Time.deltaTime*Input.mouseScrollDelta.y;
+        if (Application.isFocused) CamSize += ZoomSpeed * Time.deltaTime*Input.mouseScrollDelta.y;
     }
 }

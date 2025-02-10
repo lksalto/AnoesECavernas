@@ -21,9 +21,14 @@ public class Menu : MonoBehaviour
             active = transform.GetChild(0).gameObject.activeInHierarchy;
             transform.GetChild(0).gameObject.SetActive(!active);
             if (!active)
-            { Time.timeScale = 0f; }
+            { 
+                Time.timeScale = 0f;
+            }
             else
-            { Time.timeScale = 1f; }
+            {
+                Time.timeScale = 1f;
+
+            }
         }
     }
     public void AtivaGameobj(GameObject gamobj) 
@@ -36,10 +41,12 @@ public class Menu : MonoBehaviour
     }
     public void NovaCena(string scene) 
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
     }
     public void Sair() 
     {
         Application.Quit();
     }
+    
 }

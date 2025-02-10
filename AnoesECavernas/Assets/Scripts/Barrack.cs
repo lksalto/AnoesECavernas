@@ -166,7 +166,7 @@ public class Barrack : MonoBehaviour
         if(lvl < 3)
         {
             lvl++;
-            price *= 5;
+            price += price;
             atkSpeed = atkSpeed + atkSpeed * lvl/3;
             atkDmg = atkDmg + atkDmg * lvl/3;
 
@@ -183,6 +183,8 @@ public class Barrack : MonoBehaviour
                 clr.b -= 0.25f;
                 sr.color = clr;
             }
+
+            if (FindObjectOfType<UpgradeMenu>() != null) { Destroy(FindObjectOfType<UpgradeMenu>().gameObject, 0.2f); }
 
         }
 

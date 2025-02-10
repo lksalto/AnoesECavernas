@@ -18,6 +18,10 @@ public class PlayerLife : MonoBehaviour
         //inicializar texto da vida igual a vida
         lifeText.text = life.ToString();
     }
+    private void Update()
+    {
+        CheckGameOver();
+    }
 
     public void playerTakeDamage(int dmg)
     {
@@ -46,7 +50,8 @@ public class PlayerLife : MonoBehaviour
     public void EndGame(bool victory)
     {
         endGame.SetActive(true);
-        if(victory)
+        if (FindObjectOfType<UpgradeMenu>() != null) { Destroy(FindObjectOfType<UpgradeMenu>().gameObject, 0.2f); }
+        if (victory)
         {
             endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "VITORIA <3";
         }
@@ -55,4 +60,14 @@ public class PlayerLife : MonoBehaviour
             endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "DERROTA </3";
         }
     }
+    private void CheckGameOver()
+    {
+        EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
+        EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
+        if (spawn != null && obj != null && obj.Length >= 0 && spawn.end)
+        {
+            EndGame(true);
+        }
+    }
+
 }
