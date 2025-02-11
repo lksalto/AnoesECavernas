@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
+    private bool ended=false;
     //vida
     public int life = 5;
 
@@ -21,6 +22,13 @@ public class PlayerLife : MonoBehaviour
     private void Update()
     {
         CheckGameOver();
+        if (ended)
+        {
+            if (FindObjectOfType<UpgradeMenu>() != null)
+            {
+                Destroy(FindObjectOfType<UpgradeMenu>().gameObject, 0.2f);
+            }
+        }
     }
 
     public void playerTakeDamage(int dmg)
@@ -50,7 +58,6 @@ public class PlayerLife : MonoBehaviour
     public void EndGame(bool victory)
     {
         endGame.SetActive(true);
-        if (FindObjectOfType<UpgradeMenu>() != null) { Destroy(FindObjectOfType<UpgradeMenu>().gameObject, 0.2f); }
         if (victory)
         {
             endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "VITORIA <3";
@@ -59,14 +66,15 @@ public class PlayerLife : MonoBehaviour
         {
             endGame.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "DERROTA </3";
         }
+        ended = true;
     }
     private void CheckGameOver()
     {
         EnemyPathing[] obj = FindObjectsOfType<EnemyPathing>();
         EnemySpawner spawn = FindObjectOfType<EnemySpawner>();
-        if (spawn != null && obj != null && obj.Length >= 0 && spawn.end)
+        if (spawn != null && obj != null && obj.Length <= 0 && spawn.end)
         {
-            EndGame(true);
+            if (!ended) { EndGame(true); }
         }
     }
 

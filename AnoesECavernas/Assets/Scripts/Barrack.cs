@@ -165,6 +165,7 @@ public class Barrack : MonoBehaviour
     {
         if(lvl < 3)
         {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerResources>().AddResource(-price);
             lvl++;
             price += price;
             atkSpeed = atkSpeed + atkSpeed * lvl/3;

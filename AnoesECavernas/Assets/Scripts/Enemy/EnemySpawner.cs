@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
         public EnemyQtt[] EnemiesQts;
         public float CoolDownBetweenEnemys;
         public float SecsToNewWave;
+        public bool WhenClear;
     }
     [System.Serializable]
     public struct EnemyQtt
@@ -99,7 +100,13 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
 
-
+            if (waves[i].WhenClear) 
+            {
+                while (FindObjectsOfType<EnemyPathing>().Length > 0)
+                {
+                    yield return null; // Waits for the next frame instead of freezing
+                }
+            }
             yield return new WaitForSeconds(waves[i].SecsToNewWave);
         }
         end = true;
